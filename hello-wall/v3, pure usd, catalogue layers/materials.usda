@@ -1,0 +1,16 @@
+#usda 1.0
+(
+    defaultPrim = "Materials"
+    doc = "Material definitions for use in the IFC project"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+over Scope "Materials" 
+{
+    def Typed "Concrete"
+    {
+        
+    }
+
+}

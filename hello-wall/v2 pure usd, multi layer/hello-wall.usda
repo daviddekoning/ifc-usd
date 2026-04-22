@@ -1,0 +1,174 @@
+#usda 1.0
+(
+    customLayerData = {
+        string "ifc:schema" = "IFC4x3"
+    }
+    defaultPrim = "My_Project"
+    doc = "Translated from hello-wall.ifc using IFC→USD pragmatic mapping spec"
+    metersPerUnit = 1
+    upAxis = "Z"
+    subLayers = [
+        @./materials.usda@,
+        @./types.usda@
+    ]
+)
+
+# A Scope is the simplest grouping primitive. It is guaranteed not to have any transforms of its own,
+# but transforms will inherit through it.
+#
+# Representing an IfcProject as a scope reflects the fact that IfcProjects do not particpate in the IFC
+# placement hierarchy.
+def Scope "My_Project" (
+    doc = "IFC Project"
+    kind = "group"
+)
+{
+    # the globalId does not matter for stage composition, but is available for queries
+    string ifc:globalId = "0KhR8hr7H8eewFRKm6V1bJ"
+    string ifc:name = "My Project"
+    # additional attributes could be added to cover references to the specific classification system.
+    token ifc:ifcClass = "IfcProject"
+    
+    def Xform "My_Site" (
+        kind = "group"
+    )
+    {
+        string ifc:globalId = "3WWqaXu9L0y8XqF6lHx6cU"
+        string ifc:name = "My Site"
+        token ifc:ifcClass = "IfcSite"
+
+        # ifc:decomposes is for info only. The model can be traversed via the scenegraph.
+        rel ifc:decomposes = </My_Project>
+        
+        # `hello-wall.ifc` places the site at (0,0,0) with the default axis
+        # Xform sets default transformations to be a no-op, so we do not need to write out any transformation info
+
+        def Xform "My_Building" (
+            kind = "group"
+        )
+        {
+            string ifc:globalId = "3eJSUU$fr7WPzBLDr3NCgH"
+            string ifc:name = "My Building"
+            token ifc:ifcClass = "IfcBuilding"
+            rel ifc:decomposes = </My_Project/My_Site>
+            
+            def Xform "My_Storey" (
+                kind = "group"
+            )
+            {
+                string ifc:globalId = "14hpMBCM10Oug9g6WpN$Er"
+                string ifc:name = "My Storey"
+                token ifc:ifcClass = "IfcBuildingStorey"
+
+                # ifc:decomposes is for info only. The model can be traversed via the scenegraph.
+                rel ifc:decomposes = </My_Project/My_Site/My_Building>
+                
+                def Xform "My_Space" (
+                    kind = "group"
+                )
+                {
+                    double3 xformOp:translate = (0, 0.10000002384185791, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate"]
+                    token purpose = "guide"
+
+                    def Mesh "_15_1508" (
+                        active = true
+                    )
+                    {
+                        float3[] extent = [(0, 0, 0), (10, 5, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [0, 1, 2, 3, 0, 4, 5, 3, 6, 1, 5, 7, 1, 0, 3, 7, 6, 4, 2, 4, 0, 4, 6, 3, 6, 7, 5, 7, 2, 1, 3, 5, 1, 4, 2, 7]
+                        point3f[] points = [(0, 5, 0), (0, 0, 0), (0, 0, 3), (10, 5, 0), (0, 5, 3), (10, 0, 0), (10, 5, 3), (10, 0, 3)]
+                        uniform token subdivisionScheme = "none"
+                    }
+                }
+
+                def Xform "Wall" (
+                    doc = "IFC Wall element"
+                    kind = "assembly"
+                    references = </Types/WAL100>
+                )
+                {
+                    string ifc:globalId = "2JUHrTM_j3UxZiBnyBfByx"
+                    string ifc:name = "Wall"
+                    rel ifc:containedInSpatialStructure = </My_Project/My_Site/My_Building/My_Storey>
+                    
+                    def Mesh "_15_1261" (
+                        active = true
+                    )
+                    {
+                        float3[] extent = [(0, 0, 0), (10, 0.1, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 4, 7, 6, 5, 7, 1, 0, 5, 5, 0, 4, 6, 3, 2, 7, 3, 6, 9, 8, 11, 10, 9, 11, 10, 11, 13, 12, 10, 13, 12, 13, 15, 14, 12, 15, 14, 15, 8, 9, 14, 8, 17, 16, 19, 18, 17, 19, 18, 19, 21, 20, 18, 21, 20, 21, 23, 22, 20, 23, 22, 23, 16, 17, 22, 16, 13, 7, 15, 8, 7, 4, 8, 15, 7, 11, 8, 4, 16, 13, 11, 16, 23, 13, 16, 11, 4, 3, 21, 19, 0, 3, 19, 3, 7, 23, 23, 7, 13, 3, 23, 21, 4, 0, 19, 4, 19, 16, 24, 6, 26, 5, 6, 25, 6, 24, 25, 5, 25, 27, 27, 26, 29, 26, 28, 29, 5, 27, 29, 31, 30, 2, 31, 2, 1, 28, 6, 2, 26, 6, 28, 30, 28, 2, 31, 1, 5, 29, 31, 5]
+                        point3f[] points = [(10, 0, 0), (10, 0.1, 0), (10, 0.1, 3), (10, 0, 3), (0, 0, 0), (0, 0.1, 0), (0, 0.1, 3), (0, 0, 3), (1.7676749, 0, 1), (1.7676749, 0.1, 1), (2.667675, 0.1, 1), (2.667675, 0, 1), (2.667675, 0.1, 2.2), (2.667675, 0, 2.2), (1.7676749, 0.1, 2.2), (1.7676749, 0, 2.2), (4.9466066, 0, 1), (4.9466066, 0.1, 1), (5.8466067, 0.1, 1), (5.8466067, 0, 1), (5.8466067, 0.1, 2.2), (5.8466067, 0, 2.2), (4.9466066, 0.1, 2.2), (4.9466066, 0, 2.2), (1.7676749, 0.1, 2.2), (1.7676749, 0.1, 1), (2.667675, 0.1, 2.2), (2.667675, 0.1, 1), (4.9466066, 0.1, 2.2), (4.9466066, 0.1, 1), (5.8466067, 0.1, 2.2), (5.8466067, 0.1, 1)]
+                        uniform token subdivisionScheme = "none"
+                    }
+
+                    # Material: CONCRETE (from IFCMATERIALLAYER)
+                }
+
+                def Mesh "Window_Opening_001"
+                {
+                    # `guide` means it is not meant to be visualized
+                    token purpose = "guide"
+                    # the `ifc:voids` relationship is extra information that is not required to render or query the scene
+                    rel ifc:voids = </My_Project/My_Site/My_Building/My_Storey/Wall>
+                    rel ifc:filled_by = <../Window_001>
+
+                    int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                    int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 0, 4, 7, 3, 1, 5, 6, 2, 0, 1, 5, 4, 3, 2, 6, 7]
+                    point3f[] points = [
+                        (1.7676749, 0, 1), (2.667675, 0, 1), (2.667675, 0.1, 1), (1.7676749, 0.1, 1),
+                        (1.7676749, 0, 2.2), (2.667675, 0, 2.2), (2.667675, 0.1, 2.2), (1.7676749, 0.1, 2.2)
+                    ]
+                }
+                
+                def Xform "Window_001" (
+                    doc = "IFC Window element"
+                    references = </Types/WT01>
+                )
+                {
+                    string ifc:globalId = "0iBLIV_VvE8eMGLY$QWQQG"
+                    string ifc:name = "Window 1"
+                    rel ifc:containedInSpatialStructure = </My_Project/My_Site/My_Building/My_Storey>
+
+                    double3 xformOp:translate = (1.7676749229431152, 0, 1)
+                    uniform token[] xformOpOrder = ["xformOp:translate"]
+                }
+
+                def Mesh "Window_Opening_002"
+                {
+                    # `guide` means it is not meant to be visualized
+                    token purpose = "guide"
+                    # the `ifc:voids` relationship is extra information that is not required to render or query the scene
+                    # identification of void, and determining which elements fill which voids can be done by analysing the
+                    rel ifc:voids = </My_Project/My_Site/My_Building/My_Storey/Wall>
+                    # `ifc:filled_by` is extra information
+                    rel ifc:filled_by = <../Window_002>
+
+                    int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                    int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 0, 4, 7, 3, 1, 5, 6, 2, 0, 1, 5, 4, 3, 2, 6, 7]
+                    point3f[] points = [
+                        (4.9466066, 0, 1), (5.8466067, 0, 1), (5.8466067, 0.1, 1), (4.9466066, 0.1, 1),
+                        (4.9466066, 0, 2.2), (5.8466067, 0, 2.2), (5.8466067, 0.1, 2.2), (4.9466066, 0.1, 2.2)
+                    ]
+                }
+
+                def Xform "Window_002" (
+                    doc = "IFC Window element"
+                    references = </Types/WT01>
+                )
+                {
+                    string ifc:globalId = "1P9GJSHff4rfheo06raMUR"
+                    string ifc:name = "Window 2"
+                    rel ifc:containedInSpatialStructure = </My_Project/My_Site/My_Building/My_Storey>
+
+                    double3 xformOp:translate = (4.946606636047363, 0, 1)
+                    uniform token[] xformOpOrder = ["xformOp:translate"]
+                }
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,73 @@
+#usda 1.0
+(
+    defaultPrim = "Types"
+    doc = "Object types for use in the model"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+over Scope "Types" (
+    doc = "IFC Type Objects"
+    kind = "group"
+)
+{
+    class Xform "WT01" (
+        kind = "component"
+    )
+    {
+        string ifc:globalId = "0bK3c4PWL3eOMNwkPN$rlg"
+
+        token ifc:ifcClass = "IfcWindow"
+
+        def Mesh "IfcMesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [
+                12, 16, 17, 13, 4, 5, 2, 3, 6, 7, 1, 0, 5, 6, 0, 2, 
+                7, 4, 3, 1, 14, 18, 19, 15, 13, 17, 18, 14, 15, 19, 16, 12, 
+                3, 16, 19, 1, 1, 19, 18, 0, 7, 15, 12, 4, 6, 14, 15, 7, 
+                0, 18, 17, 2, 2, 17, 16, 3, 5, 13, 14, 6, 4, 12, 13, 5,
+                11, 10, 9, 8, 23, 20, 21, 22, 10, 22, 21, 9, 9, 21, 20, 8, 
+                8, 20, 23, 11, 11, 23, 22, 10
+            ]
+            point3f[] points = [
+                (0.9, 0, 1.2), (0.9, 0, 0), (0, 0, 1.2), (0, 0, 0), 
+                (0.1, 0, 0.1), (0.1, 0, 1.1), (0.8, 0, 1.1), (0.8, 0, 0.1), 
+                (0.1, 0.02, 0.1), (0.1, 0.02, 1.1), (0.8, 0.02, 1.1), (0.8, 0.02, 0.1), 
+                (0.1, 0.05, 0.1), (0.1, 0.05, 1.1), (0.8, 0.05, 1.1), (0.8, 0.05, 0.1), 
+                (0, 0.05, 0), (0, 0.05, 1.2), (0.9, 0.05, 1.2), (0.9, 0.05, 0), 
+                (0.1, 0.03, 0.1), (0.1, 0.03, 1.1), (0.8, 0.03, 1.1), (0.8, 0.03, 0.1)
+            ]
+            uniform token subdivisionScheme = "none"
+
+            def GeomSubset "Frame"
+            {
+                rel ifc:material = </Materials/Wood>
+                uniform token elementType = "face"
+                int[] indices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+            }
+
+            def GeomSubset "Glazing"
+            {
+                uniform token elementType = "face"
+                int[] indices = [16, 17, 18, 19, 20, 21]
+                rel ifc:material = </Materials/Glass>
+            }
+        }
+    }
+
+}
+
+over Scope "Materials"
+{
+    def Typed "Glass"
+    {
+        
+    }
+
+    def Typed "Wood"
+    {
+        
+    }
+}
