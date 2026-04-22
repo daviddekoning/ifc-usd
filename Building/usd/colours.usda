@@ -1,0 +1,300 @@
+#usda 1.0
+
+over "ifc_silly_sample_scene_project"
+{
+    over "environment_site"
+    {
+        over "house_site"
+        {
+            over "house_site_grass"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                }
+            }
+
+            over "house_site_soil"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                }
+            }
+
+            over "house_site_underground"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                }
+            }
+
+            over "origin"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "tree"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                }
+            }
+
+            over "Single_family_house"
+            {
+                over "_00_groundfloor"
+                {
+                    over "house_chimney"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "chimney_cover"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "building_element"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "house_fireplace_cap"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "house_foundation"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "house_outer_wall_house_back"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "house_outer_wall_house_front"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "house_outer_wall_house_front_right"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "house_inner_wall"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "living_room"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        }
+
+                        over "kitchen"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                            }
+                        }
+                    }
+
+                    over "entry_hall"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        }
+                    }
+
+                    over "floor"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        }
+                    }
+
+                    over "house_outer_wall_house_right_front"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        }
+                    }
+
+                    over "house_outer_wall_house_right_back"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        }
+                    }
+
+                    over "house_outer_wall_house_left"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        }
+                    }
+
+                    over "plumbing_wall"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        }
+                    }
+                }
+
+                over "house_roof"
+                {
+                    over "girder"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "girder_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "girder_2"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "girder_3"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "girder_4"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "girder_5"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "beam_shoe"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "beam_shoe_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                        }
+                    }
+
+                    over "house_roof_slab_left"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        }
+                    }
+
+                    over "house_roof_slab_right"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        }
+                    }
+                }
+
+                over "house_gross_volume"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                    }
+                }
+
+                over "sand_bedding"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                    }
+                }
+            }
+        }
+
+        over "geo_reference"
+        {
+            over "Geometry"
+            {
+                color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+            }
+        }
+    }
+}
+
