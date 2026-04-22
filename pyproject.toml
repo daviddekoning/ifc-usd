@@ -6,5 +6,6 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "ifcopenshell>=0.8.5",
+    "pydantic>=2.13.3",
     "usd-core>=26.3",
 ]
