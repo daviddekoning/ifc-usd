@@ -1,0 +1,2511 @@
+#usda 1.0
+
+over "ifc_silly_sample_scene_project"
+{
+    over "environment_site"
+    {
+        over "road_parking_site"
+        {
+            over "road_parking_road"
+            {
+                over "road_parking_road_segment"
+                {
+                    over "road_parking"
+                    {
+                        over "asphalt_binder_course_road_parking"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_parking_asphalt_surface_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_parking_subgrade"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_parking_base_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+                    }
+
+                    over "road_parking_shoulder"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+
+                    over "road_shoulder"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+
+                    over "road_carriageway"
+                    {
+                        over "road_asphalt_binder_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_asphalt_surface_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_subgrade"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_base_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+                    }
+                }
+
+                over "road_parking_road_segment_1"
+                {
+                    over "road_parking"
+                    {
+                        over "asphalt_binder_course_road_parking"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_parking_asphalt_surface_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_parking_subgrade"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_parking_base_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+                    }
+
+                    over "road_parking_shoulder"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+
+                    over "road_shoulder"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+
+                    over "road_carriageway"
+                    {
+                        over "road_asphalt_binder_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_asphalt_surface_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_subgrade"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_base_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "sewer_pipe"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_1"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_2"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_3"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_4"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_5"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_6"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_7"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "underground_road"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "road_parking_roadside_verge_soil"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "road_parking_roadside_verge_grass"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "highway_location_marker"
+            {
+                over "highway_location_marker_post"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+
+                over "highway_location_marker_sign"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+            }
+
+            over "highway_location_marker_1"
+            {
+                over "highway_location_marker_post"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+
+                over "highway_location_marker_sign"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+            }
+
+            over "highway_location_marker_2"
+            {
+                over "highway_location_marker_post"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+
+                over "highway_location_marker_sign"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+            }
+
+            over "highway_location_marker_3"
+            {
+                over "highway_location_marker_post"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+
+                over "highway_location_marker_sign"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+            }
+        }
+
+        over "road_river_bridge_site"
+        {
+            over "bridge_road_connection"
+            {
+                over "bridge_road_segment"
+                {
+                    over "road_shoulder"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+
+                    over "road_shoulder_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+
+                    over "road_carriageway_bridge_road"
+                    {
+                        over "road_base_course_bridge_road"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "bridge_road_road_asphalt_binder_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_subgrade_bridge_road"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_asphalt_surface_course_bridge_road"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "bridge_road_connection_1"
+            {
+                over "bridge_road_segment"
+                {
+                    over "road_shoulder"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+
+                    over "road_shoulder_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+
+                    over "road_carriageway_bridge_road"
+                    {
+                        over "road_base_course_bridge_road"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "bridge_road_road_asphalt_binder_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_subgrade_bridge_road"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_asphalt_surface_course_bridge_road"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "road_river_bridge"
+            {
+                over "road_rail_bridge_approach"
+                {
+                    over "bridge_road_abutment"
+                    {
+                        over "road_river_bridge_abutment_support_beam"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+                    }
+
+                    over "bridge_road_approach_slab"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+                }
+
+                over "road_rail_bridge_approach_1"
+                {
+                    over "bridge_road_abutment"
+                    {
+                        over "road_river_bridge_abutment_support_beam"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+                    }
+
+                    over "bridge_road_approach_slab"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+                }
+
+                over "road_rail_bridge_deck"
+                {
+                    over "bridge_road_railing"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "bridge_road_railing_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "road_river_bridge_bridge_deck"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+                }
+
+                over "road_rail_bridge_superstructure"
+                {
+                    over "road_river_bridge_main_girder"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "road_river_bridge_main_girder_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "road_river_bridge_main_girder_2"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+                }
+
+                over "road_river_bridge_substructure"
+                {
+                    over "road_river_bridge_pier"
+                    {
+                        over "road_river_bridge_pierstem"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+
+                        over "foundation_bridge_road"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+
+                        over "bridge_road_cross_girder"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+                    }
+
+                    over "road_river_bridge_pier_1"
+                    {
+                        over "road_river_bridge_pierstem"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+
+                        over "foundation_bridge_road"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+
+                        over "bridge_road_cross_girder"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+                    }
+
+                    over "road_river_bridge_pier_2"
+                    {
+                        over "road_river_bridge_pierstem"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+
+                        over "foundation_bridge_road"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+
+                        over "bridge_road_cross_girder"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "sewer_manhole"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_manhole_1"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "river_stream"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "river_bed"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "road_river_bridge_underground"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "road_river_bridge_grass"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "road_river_bridge_soil"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "tree"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+        }
+
+        over "rail_river_bridge_site"
+        {
+            over "Rail_track"
+            {
+                over "Rail_track"
+                {
+                    over "rail"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "rail_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "ballastbed"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_2"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_3"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_4"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_5"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_6"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_7"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_8"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_9"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_10"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_11"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_12"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_13"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_14"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_15"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_16"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_17"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_18"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_19"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_20"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_21"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_22"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_23"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_24"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_25"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_26"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_27"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_28"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_29"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_30"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_31"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_32"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+                }
+            }
+
+            over "rail_bridge"
+            {
+                over "rail_bridge_substructure"
+                {
+                    over "rail_bridge_pier"
+                    {
+                        over "rail_bridge_pierstem"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+
+                        over "foundation_bridge_rail"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+                    }
+
+                    over "rail_bridge_pier_1"
+                    {
+                        over "rail_bridge_pierstem"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+
+                        over "foundation_bridge_rail"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+                    }
+                }
+
+                over "railbridge_superstructure"
+                {
+                    over "rail_bridge_spandrel_wall"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "road_rail_bridge_name_sign"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_spandrel_wall_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "road_rail_bridge_name_sign_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_arch_segment"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_arch_segment_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_arch_segment_2"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_arch_segment_3"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_filler"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_filler_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+                }
+            }
+
+            over "river_stream"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "river_bed"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "underground_river"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "riverside_grass"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "riverside_soil"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+        }
+
+        over "road_rail_bridge_site"
+        {
+            over "road"
+            {
+                over "road_segment"
+                {
+                    over "road_carriageway"
+                    {
+                        over "road_asphalt_binder_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_asphalt_surface_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_subgrade"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_base_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+                    }
+
+                    over "road_shoulder"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+
+                    over "road_shoulder_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+                }
+            }
+
+            over "highway_location_marker"
+            {
+                over "highway_location_marker_post"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+
+                over "highway_location_marker_sign"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+            }
+
+            over "highway_location_marker_1"
+            {
+                over "highway_location_marker_post"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+
+                over "highway_location_marker_sign"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+            }
+
+            over "Rail_track"
+            {
+                over "Rail_track"
+                {
+                    over "rail"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "rail_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "ballastbed"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_2"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_3"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_4"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_5"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_6"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_7"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_8"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_9"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_10"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_11"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_12"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_13"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_14"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_15"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_16"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_17"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_18"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_19"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_20"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_21"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_22"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_23"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_24"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_25"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_26"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_27"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_28"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_29"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_30"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_31"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+
+                    over "sleeper_wood_32"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.38431373, 0.14901961, 0.67058825)]
+                        }
+                    }
+                }
+            }
+
+            over "rail_bridge"
+            {
+                over "rail_bridge_substructure"
+                {
+                    over "rail_bridge_pier"
+                    {
+                        over "rail_bridge_pierstem"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+
+                        over "foundation_bridge_rail"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+                    }
+
+                    over "rail_bridge_pier_1"
+                    {
+                        over "rail_bridge_pierstem"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+
+                        over "foundation_bridge_rail"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                            }
+                        }
+                    }
+                }
+
+                over "railbridge_superstructure"
+                {
+                    over "rail_bridge_spandrel_wall"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "road_rail_bridge_name_sign"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_spandrel_wall_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "road_rail_bridge_name_sign_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_arch_segment"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_arch_segment_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_arch_segment_2"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_arch_segment_3"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_filler"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+
+                    over "rail_bridge_filler_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                        }
+                    }
+                }
+            }
+
+            over "sewer_pipe"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_1"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_2"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_3"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_4"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_5"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_6"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_7"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "underground_road"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "road_roadside_verge_soil"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "road_roadside_verge_grass"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+        }
+
+        over "road_site"
+        {
+            over "road"
+            {
+                over "road_segment"
+                {
+                    over "road_carriageway"
+                    {
+                        over "road_asphalt_binder_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_asphalt_surface_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_subgrade"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+
+                        over "road_base_course"
+                        {
+                            over "Geometry"
+                            {
+                                color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                            }
+                        }
+                    }
+
+                    over "road_shoulder"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+
+                    over "road_shoulder_1"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+                }
+            }
+
+            over "sewer_pipe"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_1"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_2"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_3"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_4"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_5"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_6"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "sewer_pipe_7"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                }
+            }
+
+            over "underground_road"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "road_roadside_verge_soil"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "road_roadside_verge_grass"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "highway_location_marker"
+            {
+                over "highway_location_marker_post"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+
+                over "highway_location_marker_sign"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+            }
+
+            over "highway_location_marker_1"
+            {
+                over "highway_location_marker_post"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+
+                over "highway_location_marker_sign"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+            }
+
+            over "highway_location_marker_2"
+            {
+                over "highway_location_marker_post"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+
+                over "highway_location_marker_sign"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+            }
+
+            over "highway_location_marker_3"
+            {
+                over "highway_location_marker_post"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+
+                over "highway_location_marker_sign"
+                {
+                    over "Geometry"
+                    {
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                    }
+                }
+            }
+        }
+
+        over "geo_reference"
+        {
+            over "Geometry"
+            {
+                color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+            }
+        }
+
+        over "park_site"
+        {
+            over "park_site_underground"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "park_site_grass"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_tree"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_1"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_2"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "Apple"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_3"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_4"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_5"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_6"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_tree_1"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_7"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_8"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_9"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "Apple_1"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_10"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_11"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_12"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_13"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_tree_2"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_14"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_15"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_16"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "Apple_2"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_17"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_18"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_19"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_20"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_tree_3"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_21"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_22"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_23"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "Apple_3"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_24"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_25"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_26"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_27"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_tree_4"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_28"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_29"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_30"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "Apple_4"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_31"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_32"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_33"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_34"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_tree_5"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_35"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_36"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_37"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "Apple_5"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_38"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_39"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_40"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "apple_41"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "park_site_soil"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+        }
+
+        over "meadow_site"
+        {
+            over "generic_site_underground"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "grass_site_soil"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "grass_site_grass"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+        }
+    }
+}
+

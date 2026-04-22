@@ -1,0 +1,1940 @@
+#usda 1.0
+(
+    customLayerData = {
+        string "ifc:schema" = "IFC4x3"
+    }
+    defaultPrim = "ifc_silly_sample_scene_project"
+    doc = "Translated from Infra-Rail.ifc using IFC to USD pragmatic mapping spec"
+    metersPerUnit = 0.001
+    upAxis = "Z"
+)
+
+def Scope "ifc_silly_sample_scene_project" (
+    doc = "IFC Project"
+    kind = "group"
+)
+{
+    custom string ifc:globalId = "2Ndyd$OSX7s9A04nc4lyye"
+    custom token ifc:ifcClass = "IfcProject"
+    custom string ifc:name = "ifc silly sample scene - project"
+
+    def Xform "environment_site" (
+        kind = "group"
+    )
+    {
+        prepend rel ifc:decomposes = </ifc_silly_sample_scene_project>
+        custom string ifc:globalId = "23sFQGRy90RxVbRHD9iSE2"
+        custom token ifc:ifcClass = "IfcSite"
+        custom string ifc:name = "environment - site"
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Xform "road_parking_site" (
+            kind = "group"
+        )
+        {
+            prepend rel ifc:decomposes = </ifc_silly_sample_scene_project/environment_site>
+            custom string ifc:globalId = "1adp27B_9CUfup2ojuKOng"
+            custom token ifc:ifcClass = "IfcSite"
+            custom string ifc:name = "road parking - site"
+            matrix4d xformOp:transform = ( (-0.5000000000000001, 0.8660254037844385, 0, 0), (-0.8660254037844386, -0.5000000000000002, 0, 0), (0, 0, 1, 0), (1.710810113274937e-14, 20.000000000000053, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "road_river_bridge_site" (
+            kind = "group"
+        )
+        {
+            prepend rel ifc:decomposes = </ifc_silly_sample_scene_project/environment_site>
+            custom string ifc:globalId = "3pnaj3EgL1cOScZHtoQhHO"
+            custom token ifc:ifcClass = "IfcSite"
+            custom string ifc:name = "road river bridge - site"
+            matrix4d xformOp:transform = ( (-0.5000000000000002, 0.8660254037844385, 0, 0), (-0.8660254037844386, -0.5000000000000003, 0, 0), (0, 0, 1, 0), (17.32050807568878, 30.000000000000068, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "rail_river_bridge_site" (
+            kind = "group"
+        )
+        {
+            prepend rel ifc:decomposes = </ifc_silly_sample_scene_project/environment_site>
+            custom string ifc:globalId = "2Wad9UE39Fl81buLr2dp_x"
+            custom token ifc:ifcClass = "IfcSite"
+            custom string ifc:name = "rail river bridge - site"
+            matrix4d xformOp:transform = ( (0.8660254037844387, -0.4999999999999999, 0, 0), (0.4999999999999999, 0.8660254037844387, 0, 0), (0, 0, 1, 0), (17.320508075688767, 50, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Xform "Rail_track" (
+                kind = "assembly"
+            )
+            {
+                prepend rel ifc:decomposes = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site>
+                custom string ifc:globalId = "144_CJ8b1C7xe6fkDXe2iD"
+                custom token ifc:ifcClass = "IfcRailway"
+                custom string ifc:name = "Rail track"
+                matrix4d xformOp:transform = ( (1.0547118733938987e-15, -1, 0, 0), (1, 1.0547118733938987e-15, 0, 0), (0, 0, 1, 0), (-10.000000000000153, 1.7318519951459166e-8, 7.774582119028394, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def Xform "Rail_track" (
+                    kind = "component"
+                )
+                {
+                    prepend rel ifc:decomposes = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track>
+                    custom string ifc:globalId = "0vMmNglnHCxwAXN15KG$Y3"
+                    custom token ifc:ifcClass = "IfcRailwayPart"
+                    custom string ifc:name = "Rail track"
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Xform "rail" (
+                        kind = "component"
+                        prepend references = </Types/rail>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3Ixq0AlaX2PR0EdMfWL49i"
+                        custom token ifc:ifcClass = "IfcRail"
+                        prepend rel ifc:material = </Materials/metal_hot_rolled_steel>
+                        custom string ifc:name = "rail"
+                        matrix4d xformOp:transform = ( (-1, 0, -1.1210387714598537e-44, 0), (0, -1, -2.1772560984099926e-28, 0), (1.1210387714598537e-44, -2.1772560984099926e-28, 1, 0), (0, 0, -0.1719999999999997, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 2, 1, 3, 4, 2, 3, 4, 5, 2, 7, 1, 6, 3, 1, 7, 10, 8, 9, 10, 9, 11, 12, 13, 14, 13, 15, 14, 14, 15, 16, 19, 18, 17, 17, 18, 13, 22, 20, 21, 23, 22, 21, 2, 5, 14, 14, 16, 2, 7, 11, 23, 23, 17, 7, 9, 22, 11, 11, 22, 23, 8, 22, 9, 20, 22, 8, 20, 8, 10, 10, 21, 20, 10, 6, 19, 21, 10, 19, 0, 2, 16, 0, 16, 15, 3, 7, 17, 17, 13, 3, 6, 1, 19, 18, 19, 1, 4, 14, 5, 4, 12, 14, 0, 18, 1, 15, 18, 0, 3, 12, 4, 3, 13, 12]
+                            point3f[] points = [(-0.714, -1.4438228e-15, 0.121), (-0.74175, -1.4438228e-15, 0.121), (-0.714, 1.4438228e-15, 0.172), (-0.75825, -1.4438228e-15, 0.121), (-0.786, -0, 0.121), (-0.786, 2.8876456e-15, 0.172), (-0.74175, -0, 0.0115), (-0.75825, -0, 0.0115), (-0.675, 1.4438228e-15, 1.5e-44), (-0.825, 2.8876456e-15, 1.8e-44), (-0.675, -0, 0.0115), (-0.825, 1.4438228e-15, 0.0115), (-0.786, -20, 0.121), (-0.75825, -20, 0.121), (-0.786, -20, 0.172), (-0.714, -20, 0.121), (-0.714, -20, 0.172), (-0.75825, -20, 0.0115), (-0.74175, -20, 0.121), (-0.74175, -20, 0.0115), (-0.675, -20, -2.8876456e-15), (-0.675, -20, 0.0115), (-0.825, -20, -1.4438228e-15), (-0.825, -20, 0.0115)]
+                        }
+                    }
+
+                    def Xform "rail_1" (
+                        kind = "component"
+                        prepend references = </Types/rail>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0gOEB3nvP8w8b2x7dkCurB"
+                        custom token ifc:ifcClass = "IfcRail"
+                        prepend rel ifc:material = </Materials/metal_hot_rolled_steel>
+                        custom string ifc:name = "rail"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (7.105427357601002e-15, -3.552713678800501e-15, -0.1719999999999997, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 4, 3, 0, 5, 4, 0, 7, 1, 6, 3, 6, 1, 10, 8, 9, 11, 9, 8, 13, 14, 12, 12, 15, 13, 12, 16, 15, 19, 18, 17, 18, 19, 13, 22, 20, 21, 21, 20, 23, 0, 12, 5, 0, 16, 12, 6, 23, 11, 6, 19, 23, 9, 11, 20, 23, 20, 11, 9, 20, 10, 20, 22, 10, 22, 8, 10, 22, 21, 8, 8, 17, 7, 21, 17, 8, 16, 0, 2, 15, 16, 2, 19, 6, 3, 19, 3, 13, 17, 1, 7, 1, 17, 18, 4, 5, 12, 4, 12, 14, 1, 18, 2, 2, 18, 15, 3, 4, 14, 3, 14, 13]
+                            point3f[] points = [(-0.714, -1.4438228e-15, 0.172), (-0.74175, 1.4438228e-15, 0.121), (-0.714, 1.4438228e-15, 0.121), (-0.75825, 1.4438228e-15, 0.121), (-0.786, 0, 0.121), (-0.786, -2.8876456e-15, 0.172), (-0.75825, 0, 0.0115), (-0.74175, 0, 0.0115), (-0.675, 0, 0.0115), (-0.825, -2.8876456e-15, 0), (-0.675, -1.4438228e-15, 0), (-0.825, -1.4438228e-15, 0.0115), (-0.786, 20, 0.172), (-0.75825, 20, 0.121), (-0.786, 20, 0.121), (-0.714, 20, 0.121), (-0.714, 20, 0.172), (-0.74175, 20, 0.0115), (-0.74175, 20, 0.121), (-0.75825, 20, 0.0115), (-0.825, 20, -1.4438228e-15), (-0.675, 20, 0.0115), (-0.675, 20, -2.8876456e-15), (-0.825, 20, 0.0115)]
+                        }
+                    }
+
+                    def Xform "ballastbed" (
+                        kind = "component"
+                        prepend references = </Types/ballastbed>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2VSzSEJibEmQCf1lSBr3vL"
+                        custom token ifc:ifcClass = "IfcCourse"
+                        prepend rel ifc:material = </Materials/bulk_material_ballast_generic>
+                        custom string ifc:name = "ballastbed"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [1, 2, 0, 0, 3, 1, 5, 6, 4, 4, 7, 5, 8, 9, 4, 4, 6, 8, 10, 8, 11, 10, 9, 8, 12, 11, 13, 12, 10, 11, 14, 13, 15, 14, 12, 13, 16, 15, 17, 16, 14, 15, 18, 17, 19, 18, 16, 17, 20, 19, 21, 20, 18, 19, 22, 21, 23, 22, 20, 21, 24, 23, 25, 24, 22, 23, 26, 25, 27, 26, 24, 25, 28, 27, 29, 28, 26, 27, 30, 31, 28, 28, 29, 30, 32, 30, 33, 32, 31, 30, 34, 33, 35, 34, 32, 33, 36, 35, 37, 36, 34, 35, 38, 37, 39, 38, 36, 37, 3, 0, 38, 39, 3, 38, 42, 40, 41, 43, 41, 40, 41, 43, 44, 45, 44, 43, 46, 45, 43, 47, 46, 43, 48, 47, 43, 49, 48, 43, 50, 49, 43, 49, 50, 51, 49, 51, 52, 53, 52, 51, 52, 53, 54, 55, 54, 53, 56, 55, 53, 55, 56, 57, 58, 57, 56, 57, 58, 59, 61, 40, 60, 40, 2, 60, 7, 2, 40, 4, 2, 7, 0, 2, 4, 7, 40, 42, 0, 4, 9, 0, 9, 10, 0, 10, 12, 0, 12, 14, 0, 14, 16, 0, 16, 18, 0, 18, 38, 36, 38, 18, 20, 36, 18, 34, 36, 20, 22, 34, 20, 24, 34, 22, 32, 34, 24, 26, 32, 24, 31, 32, 26, 28, 31, 26, 57, 59, 62, 59, 63, 62, 46, 47, 64, 47, 65, 64, 49, 52, 66, 52, 67, 66, 54, 55, 68, 55, 69, 68, 70, 71, 51, 70, 51, 50, 72, 73, 44, 44, 45, 72, 74, 75, 58, 74, 58, 56, 52, 54, 67, 54, 68, 67, 45, 46, 72, 46, 64, 72, 50, 43, 70, 43, 76, 70, 43, 40, 76, 40, 77, 76, 78, 79, 1, 1, 77, 78, 5, 77, 1, 6, 5, 1, 1, 3, 6, 8, 6, 3, 11, 8, 3, 13, 11, 3, 15, 13, 3, 17, 15, 3, 19, 17, 3, 39, 19, 3, 37, 19, 39, 21, 19, 37, 35, 21, 37, 23, 21, 35, 25, 23, 35, 33, 25, 35, 27, 25, 33, 30, 27, 33, 29, 27, 30, 80, 76, 77, 80, 77, 81, 77, 5, 81, 73, 76, 80, 76, 73, 72, 76, 72, 64, 65, 76, 64, 82, 76, 65, 66, 76, 82, 70, 76, 66, 71, 70, 66, 67, 71, 66, 83, 71, 67, 68, 83, 67, 69, 83, 68, 74, 83, 69, 74, 69, 62, 75, 74, 62, 63, 75, 62, 42, 5, 7, 5, 42, 81, 42, 41, 81, 41, 80, 81, 73, 80, 41, 41, 44, 73, 47, 82, 65, 47, 48, 82, 56, 83, 74, 83, 56, 53, 66, 82, 48, 48, 49, 66, 59, 75, 63, 75, 59, 58, 53, 51, 83, 51, 71, 83, 62, 69, 55, 55, 57, 62, 79, 60, 2, 2, 1, 79, 60, 79, 61, 78, 61, 79, 61, 78, 40, 78, 77, 40]
+                            point3f[] points = [(-1.572705, -4.3314686e-15, -0.19332857), (-1.75, 20, -0.3115987), (-1.75, 1.7325874e-14, -0.3115987), (-1.572705, 20, -0.19332857), (-1.2034674, 1.4438228e-15, -0.22518083), (-1.1780227, 20, -0.227), (-1.2034674, 20, -0.22518083), (-1.1780227, -2.8876456e-15, -0.227), (-1.227707, 20, -0.22163737), (-1.227707, -5.7752913e-15, -0.22163737), (-1.2534357, -4.3314686e-15, -0.2159226), (-1.2534357, 20, -0.2159226), (-1.2803762, -4.3314686e-15, -0.20571552), (-1.2803762, 20, -0.20571552), (-1.2888293, -7.2191144e-15, -0.20255475), (-1.2888293, 20, -0.20255475), (-1.2991676, -5.7752913e-15, -0.19700192), (-1.2991676, 20, -0.19700192), (-1.325219, -1.4438228e-15, -0.18288879), (-1.325219, 20, -0.18288879), (-1.3524641, -5.7752913e-15, -0.17080288), (-1.3524641, 20, -0.17080288), (-1.3662689, -1.2994405e-14, -0.16472559), (-1.3662689, 20, -0.16472559), (-1.3802092, -1.010676e-14, -0.16167009), (-1.3802092, 20, -0.16167009), (-1.408297, 2.8876456e-15, -0.15528978), (-1.408297, 20, -0.15528978), (-1.420579, 8.662937e-15, -0.15472169), (-1.420579, 20, -0.15472169), (-1.4526057, 20, -0.15361291), (-1.4526057, -2.8876456e-15, -0.15361291), (-1.4834849, -4.3314686e-15, -0.158072), (-1.4834849, 20, -0.158072), (-1.5082055, 4.3314686e-15, -0.16426134), (-1.5082055, 20, -0.16426134), (-1.5341187, -4.3314686e-15, -0.17286234), (-1.5341187, 20, -0.17286234), (-1.5597584, -5.7752913e-15, -0.18643041), (-1.5597584, 20, -0.18643041), (1.75, -5.7752913e-15, -0.31159866), (1.2034674, 0, -0.22518083), (1.1780227, 8.662937e-15, -0.227), (1.572705, -2.8876456e-15, -0.19332857), (1.227707, -1.15505826e-14, -0.22163737), (1.2534357, -2.8876456e-15, -0.2159226), (1.2803762, -4.3314686e-15, -0.20571552), (1.2888293, -1.588205e-14, -0.20255475), (1.2991676, -1.4438228e-15, -0.19700192), (1.325219, 4.3314686e-15, -0.18288879), (1.5597584, -7.2191144e-15, -0.18643041), (1.5341187, 0, -0.17286234), (1.3524641, -1.010676e-14, -0.17080288), (1.5082055, 1.4438228e-15, -0.16426134), (1.3662689, -4.3314686e-15, -0.16472559), (1.3802092, 0, -0.16167009), (1.483485, 1.010676e-14, -0.158072), (1.408297, -4.3314686e-15, -0.15528978), (1.4526057, -2.8876456e-15, -0.15361291), (1.420579, -5.7752913e-15, -0.15472169), (-1.75, -2.3101165e-14, -0.4), (1.75, -3.032028e-14, -0.4), (1.408297, 20, -0.15528978), (1.420579, 20, -0.15472169), (1.2803762, 20, -0.20571552), (1.2888293, 20, -0.20255475), (1.325219, 20, -0.18288879), (1.3524641, 20, -0.17080288), (1.3662689, 20, -0.16472559), (1.3802092, 20, -0.16167009), (1.5597584, 20, -0.18643041), (1.5341187, 20, -0.17286234), (1.2534357, 20, -0.2159226), (1.227707, 20, -0.22163737), (1.483485, 20, -0.158072), (1.4526057, 20, -0.15361291), (1.572705, 20, -0.19332857), (1.75, 20, -0.31159866), (1.75, 20, -0.4), (-1.75, 20, -0.4), (1.2034674, 20, -0.22518083), (1.1780227, 20, -0.227), (1.2991676, 20, -0.19700192), (1.5082055, 20, -0.16426134)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0mApyqgbP3kwWGcMHpBgdC"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648555649415357e-9, 0.1795200727971924, -0.1749999999999865, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_1" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1gG3H$M4nC18HrcjbZfxcQ"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648562754842715e-9, 0.7855806788577802, -0.1749999999999865, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_2" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2pFyoP4czDyPD7YSYV0g1I"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648534333133284e-9, 1.3916412849183928, -0.1749999999999856, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_3" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0LmYrpL31BLxBAY291UUPV"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648527227705927e-9, 1.9977018909789948, -0.1749999999999856, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_4" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3CF5zUVrXC$xgrsKXU$XAx"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648555649415357e-9, 2.603762497039604, -0.1749999999999865, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_5" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1jPuNq3399wwsfi63CaYtQ"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648534333133284e-9, 3.2098231031002022, -0.1749999999999856, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_6" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2hC6KuMWz8T8p3DKcB74Nr"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648562754842715e-9, 3.815883709160822, -0.1749999999999856, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_7" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3ooxVTKoDDyAfZgN27B0Xt"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648548543988e-9, 4.421944315221433, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_8" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3QRjVXoH17pvJxTHfLfGTz"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648569860270072e-9, 5.028004921282033, -0.1749999999999856, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_9" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1A14NvUhv2_wMj4mxmA7o0"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648562754842715e-9, 5.634065527342642, -0.1749999999999856, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_10" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0rTKpqwfH8ZvpESUY9mK0D"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648555649415357e-9, 6.2401261334032405, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_11" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0bjxY5edf3ORsHsGFLUXnG"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648520122278569e-9, 6.846186739463848, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_12" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1p7IOkE9j9cwFyx4_vQUH$"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648562754842715e-9, 7.45224734552445, -0.1749999999999856, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_13" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0X2A_iiNzCc9sTeIrZyf9i"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648555649415357e-9, 8.058307951585059, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_14" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "240DDX4Zv7ZRBebISw7amg"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648562754842715e-9, 8.664368557645664, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_15" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0SNcQbysLA08i6DTmPfdl$"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648534333133284e-9, 9.270429163706268, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_16" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1KgKJls3H9_u5Xd8c_HS7x"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648534333133284e-9, 9.876489769766858, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_17" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3b4O_fC9b728g3ldIvq6l2"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648555649415357e-9, 10.482550375827474, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_18" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "20FBV5Tcj4yeFIkA119U20"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648548543988e-9, 11.088610981888083, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_19" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1J8_j1nRDDfQQXFNU6jh1C"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648562754842715e-9, 11.694671587948683, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_20" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3jf03qOPH8oftXrH9IVkSa"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648527227705927e-9, 12.300732194009292, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_21" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2SCufMLTX7xQpijUrlgbDl"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648548543988e-9, 12.906792800069912, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_22" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3BWkltsLT1kg_mUdP5q1Mv"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648548543988e-9, 13.512853406130517, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_23" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0NjD4eL$13aPRyMEU8_Pur"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648562754842715e-9, 14.11891401219112, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_24" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0y55PkXXrAfxfuCFlVHxdf"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648534333133284e-9, 14.724974618251714, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_25" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1DlyW6vE1AFxD298O5l6sU"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648555649415357e-9, 15.331035224312327, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_26" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3yQtEGRLLAuwH0EvMJUSpX"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648562754842715e-9, 15.937095830372929, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_27" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2mQystxXrBl9nXWHqw58UW"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648562754842715e-9, 16.543156436433538, -0.17499999999998117, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_28" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2aNIR9HKD6lPzpHEoqth$b"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648534333133284e-9, 17.149217042494147, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_29" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2dSJ10Gxv9AR$_DmiMCtSq"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648555649415357e-9, 17.755277648554745, -0.17499999999998117, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_30" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "225m02QHv3mhkTXinDpbnC"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648562754842715e-9, 18.361338254615347, -0.17499999999998117, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_31" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2HKuqlX7D0UQ6Ws7xU2Tpj"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648562754842715e-9, 18.967398860675953, -0.17499999999998117, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_32" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/rail_river_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3615LYIInAVAKMJ7MpZ30R"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648534333133284e-9, 19.573459466736566, -0.17499999999998117, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+                }
+            }
+        }
+
+        def Xform "road_rail_bridge_site" (
+            kind = "group"
+        )
+        {
+            prepend rel ifc:decomposes = </ifc_silly_sample_scene_project/environment_site>
+            custom string ifc:globalId = "1$CApj9YLCeu0YyH5TXRVh"
+            custom token ifc:ifcClass = "IfcSite"
+            custom string ifc:name = "road rail bridge - site"
+            matrix4d xformOp:transform = ( (-0.5000000000000007, 0.8660254037844383, 0, 0), (-0.8660254037844383, -0.5000000000000007, 0, 0), (0, 0, 1, 0), (34.641016151377556, 40.00000000000001, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Xform "Rail_track" (
+                kind = "assembly"
+            )
+            {
+                prepend rel ifc:decomposes = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site>
+                custom string ifc:globalId = "1OAsMV9659sQQS2f3ETl_F"
+                custom token ifc:ifcClass = "IfcRailway"
+                custom string ifc:name = "Rail track"
+                matrix4d xformOp:transform = ( (-0.5000000000000007, 0.8660254037844384, 0, 0), (-0.8660254037844384, -0.5000000000000007, 0, 0), (0, 0, 1, 0), (8.66025404650393, 4.999999985001708, 7.774582119028391, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def Xform "Rail_track" (
+                    kind = "component"
+                )
+                {
+                    prepend rel ifc:decomposes = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track>
+                    custom string ifc:globalId = "1Y4VQW3SD4UO4o4Dn6KDad"
+                    custom token ifc:ifcClass = "IfcRailwayPart"
+                    custom string ifc:name = "Rail track"
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-7.105427357601002e-15, -2.524354896707238e-29, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Xform "rail" (
+                        kind = "component"
+                        prepend references = </Types/rail>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "14O93KCH5CcwgIvHrgZEXj"
+                        custom token ifc:ifcClass = "IfcRail"
+                        prepend rel ifc:material = </Materials/metal_hot_rolled_steel>
+                        custom string ifc:name = "rail"
+                        matrix4d xformOp:transform = ( (-1, 0, -1.1210387714598537e-44, 0), (0, -1, -2.1772560984099926e-28, 0), (1.1210387714598537e-44, -2.1772560984099926e-28, 1, 0), (-1.4210854715202004e-14, -2.524354896707238e-29, -0.1719999999999997, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 2, 1, 3, 4, 2, 3, 4, 5, 2, 7, 1, 6, 3, 1, 7, 10, 8, 9, 10, 9, 11, 12, 13, 14, 13, 15, 14, 14, 15, 16, 19, 18, 17, 17, 18, 13, 22, 20, 21, 23, 22, 21, 2, 5, 14, 14, 16, 2, 7, 11, 23, 23, 17, 7, 9, 22, 11, 11, 22, 23, 8, 22, 9, 20, 22, 8, 20, 8, 10, 10, 21, 20, 10, 6, 19, 21, 10, 19, 0, 2, 16, 0, 16, 15, 3, 7, 17, 17, 13, 3, 6, 1, 19, 18, 19, 1, 4, 14, 5, 4, 12, 14, 0, 18, 1, 15, 18, 0, 3, 12, 4, 3, 13, 12]
+                            point3f[] points = [(-0.714, -1.4438228e-15, 0.121), (-0.74175, -1.4438228e-15, 0.121), (-0.714, 1.4438228e-15, 0.172), (-0.75825, -1.4438228e-15, 0.121), (-0.786, -0, 0.121), (-0.786, 2.8876456e-15, 0.172), (-0.74175, -0, 0.0115), (-0.75825, -0, 0.0115), (-0.675, 1.4438228e-15, 7e-45), (-0.825, 2.8876456e-15, 1e-44), (-0.675, -0, 0.0115), (-0.825, 1.4438228e-15, 0.0115), (-0.786, -20, 0.121), (-0.75825, -20, 0.121), (-0.786, -20, 0.172), (-0.714, -20, 0.121), (-0.714, -20, 0.172), (-0.75825, -20, 0.0115), (-0.74175, -20, 0.121), (-0.74175, -20, 0.0115), (-0.675, -20, -2.8876456e-15), (-0.675, -20, 0.0115), (-0.825, -20, -1.4438228e-15), (-0.825, -20, 0.0115)]
+                        }
+                    }
+
+                    def Xform "rail_1" (
+                        kind = "component"
+                        prepend references = </Types/rail>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2$czTi6GrAHxd14aD6Qmmc"
+                        custom token ifc:ifcClass = "IfcRail"
+                        prepend rel ifc:material = </Materials/metal_hot_rolled_steel>
+                        custom string ifc:name = "rail"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, -2.524354896707238e-29, -0.1719999999999997, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 4, 3, 0, 5, 4, 0, 7, 1, 6, 3, 6, 1, 10, 8, 9, 11, 9, 8, 13, 14, 12, 12, 15, 13, 12, 16, 15, 19, 18, 17, 18, 19, 13, 22, 20, 21, 21, 20, 23, 0, 12, 5, 0, 16, 12, 6, 23, 11, 6, 19, 23, 9, 11, 20, 23, 20, 11, 9, 20, 10, 20, 22, 10, 22, 8, 10, 22, 21, 8, 8, 17, 7, 21, 17, 8, 16, 0, 2, 15, 16, 2, 19, 6, 3, 19, 3, 13, 17, 1, 7, 1, 17, 18, 4, 5, 12, 4, 12, 14, 1, 18, 2, 2, 18, 15, 3, 4, 14, 3, 14, 13]
+                            point3f[] points = [(-0.714, -1.4438228e-15, 0.172), (-0.74175, 1.4438228e-15, 0.121), (-0.714, 1.4438228e-15, 0.121), (-0.75825, 1.4438228e-15, 0.121), (-0.786, 0, 0.121), (-0.786, -2.8876456e-15, 0.172), (-0.75825, 0, 0.0115), (-0.74175, 0, 0.0115), (-0.675, 0, 0.0115), (-0.825, -2.8876456e-15, 0), (-0.675, -1.4438228e-15, 0), (-0.825, -1.4438228e-15, 0.0115), (-0.786, 20, 0.172), (-0.75825, 20, 0.121), (-0.786, 20, 0.121), (-0.714, 20, 0.121), (-0.714, 20, 0.172), (-0.74175, 20, 0.0115), (-0.74175, 20, 0.121), (-0.75825, 20, 0.0115), (-0.825, 20, -1.4438228e-15), (-0.675, 20, 0.0115), (-0.675, 20, -2.8876456e-15), (-0.825, 20, 0.0115)]
+                        }
+                    }
+
+                    def Xform "ballastbed" (
+                        kind = "component"
+                        prepend references = </Types/ballastbed>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "29NeQDl9r0RPTH7F43W1He"
+                        custom token ifc:ifcClass = "IfcCourse"
+                        prepend rel ifc:material = </Materials/bulk_material_ballast_generic>
+                        custom string ifc:name = "ballastbed"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-7.105427357601002e-15, -2.524354896707238e-29, 0, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [1, 2, 0, 0, 3, 1, 5, 6, 4, 4, 7, 5, 8, 9, 4, 4, 6, 8, 10, 8, 11, 10, 9, 8, 12, 11, 13, 12, 10, 11, 14, 13, 15, 14, 12, 13, 16, 15, 17, 16, 14, 15, 18, 17, 19, 18, 16, 17, 20, 19, 21, 20, 18, 19, 22, 21, 23, 22, 20, 21, 24, 23, 25, 24, 22, 23, 26, 25, 27, 26, 24, 25, 28, 27, 29, 28, 26, 27, 30, 31, 28, 28, 29, 30, 32, 30, 33, 32, 31, 30, 34, 33, 35, 34, 32, 33, 36, 35, 37, 36, 34, 35, 38, 37, 39, 38, 36, 37, 3, 0, 38, 39, 3, 38, 42, 40, 41, 43, 41, 40, 41, 43, 44, 45, 44, 43, 46, 45, 43, 47, 46, 43, 48, 47, 43, 49, 48, 43, 50, 49, 43, 49, 50, 51, 49, 51, 52, 53, 52, 51, 52, 53, 54, 55, 54, 53, 56, 55, 53, 55, 56, 57, 58, 57, 56, 57, 58, 59, 61, 40, 60, 40, 2, 60, 7, 2, 40, 4, 2, 7, 0, 2, 4, 7, 40, 42, 0, 4, 9, 0, 9, 10, 0, 10, 12, 0, 12, 14, 0, 14, 16, 0, 16, 18, 0, 18, 38, 36, 38, 18, 20, 36, 18, 34, 36, 20, 22, 34, 20, 24, 34, 22, 32, 34, 24, 26, 32, 24, 31, 32, 26, 28, 31, 26, 57, 59, 62, 59, 63, 62, 46, 47, 64, 47, 65, 64, 49, 52, 66, 52, 67, 66, 54, 55, 68, 55, 69, 68, 70, 71, 51, 70, 51, 50, 72, 73, 44, 44, 45, 72, 74, 75, 58, 74, 58, 56, 52, 54, 67, 54, 68, 67, 45, 46, 72, 46, 64, 72, 50, 43, 70, 43, 76, 70, 43, 40, 76, 40, 77, 76, 78, 79, 1, 1, 77, 78, 5, 77, 1, 6, 5, 1, 1, 3, 6, 8, 6, 3, 11, 8, 3, 13, 11, 3, 15, 13, 3, 17, 15, 3, 19, 17, 3, 39, 19, 3, 37, 19, 39, 21, 19, 37, 35, 21, 37, 23, 21, 35, 25, 23, 35, 33, 25, 35, 27, 25, 33, 30, 27, 33, 29, 27, 30, 80, 76, 77, 80, 77, 81, 77, 5, 81, 73, 76, 80, 76, 73, 72, 76, 72, 64, 65, 76, 64, 82, 76, 65, 66, 76, 82, 70, 76, 66, 71, 70, 66, 67, 71, 66, 83, 71, 67, 68, 83, 67, 69, 83, 68, 74, 83, 69, 74, 69, 62, 75, 74, 62, 63, 75, 62, 42, 5, 7, 5, 42, 81, 42, 41, 81, 41, 80, 81, 73, 80, 41, 41, 44, 73, 47, 82, 65, 47, 48, 82, 56, 83, 74, 83, 56, 53, 66, 82, 48, 48, 49, 66, 59, 75, 63, 75, 59, 58, 53, 51, 83, 51, 71, 83, 62, 69, 55, 55, 57, 62, 79, 60, 2, 2, 1, 79, 60, 79, 61, 78, 61, 79, 61, 78, 40, 78, 77, 40]
+                            point3f[] points = [(-1.572705, -4.3314686e-15, -0.19332857), (-1.75, 20, -0.3115987), (-1.75, 1.7325874e-14, -0.3115987), (-1.572705, 20, -0.19332857), (-1.2034674, 1.4438228e-15, -0.22518083), (-1.1780227, 20, -0.227), (-1.2034674, 20, -0.22518083), (-1.1780227, -2.8876456e-15, -0.227), (-1.227707, 20, -0.22163737), (-1.227707, -5.7752913e-15, -0.22163737), (-1.2534357, -4.3314686e-15, -0.2159226), (-1.2534357, 20, -0.2159226), (-1.2803762, -4.3314686e-15, -0.20571552), (-1.2803762, 20, -0.20571552), (-1.2888293, -7.2191144e-15, -0.20255475), (-1.2888293, 20, -0.20255475), (-1.2991676, -5.7752913e-15, -0.19700192), (-1.2991676, 20, -0.19700192), (-1.325219, -1.4438228e-15, -0.18288879), (-1.325219, 20, -0.18288879), (-1.3524641, -5.7752913e-15, -0.17080288), (-1.3524641, 20, -0.17080288), (-1.3662689, -1.2994405e-14, -0.16472559), (-1.3662689, 20, -0.16472559), (-1.3802092, -1.010676e-14, -0.16167009), (-1.3802092, 20, -0.16167009), (-1.408297, 2.8876456e-15, -0.15528978), (-1.408297, 20, -0.15528978), (-1.420579, 8.662937e-15, -0.15472169), (-1.420579, 20, -0.15472169), (-1.4526057, 20, -0.15361291), (-1.4526057, -2.8876456e-15, -0.15361291), (-1.4834849, -4.3314686e-15, -0.158072), (-1.4834849, 20, -0.158072), (-1.5082055, 4.3314686e-15, -0.16426134), (-1.5082055, 20, -0.16426134), (-1.5341187, -4.3314686e-15, -0.17286234), (-1.5341187, 20, -0.17286234), (-1.5597584, -5.7752913e-15, -0.18643041), (-1.5597584, 20, -0.18643041), (1.75, -5.7752913e-15, -0.31159866), (1.2034674, 0, -0.22518083), (1.1780227, 8.662937e-15, -0.227), (1.572705, -2.8876456e-15, -0.19332857), (1.227707, -1.15505826e-14, -0.22163737), (1.2534357, -2.8876456e-15, -0.2159226), (1.2803762, -4.3314686e-15, -0.20571552), (1.2888293, -1.588205e-14, -0.20255475), (1.2991676, -1.4438228e-15, -0.19700192), (1.325219, 4.3314686e-15, -0.18288879), (1.5597584, -7.2191144e-15, -0.18643041), (1.5341187, 0, -0.17286234), (1.3524641, -1.010676e-14, -0.17080288), (1.5082055, 1.4438228e-15, -0.16426134), (1.3662689, -4.3314686e-15, -0.16472559), (1.3802092, 0, -0.16167009), (1.483485, 1.010676e-14, -0.158072), (1.408297, -4.3314686e-15, -0.15528978), (1.4526057, -2.8876456e-15, -0.15361291), (1.420579, -5.7752913e-15, -0.15472169), (-1.75, -2.3101165e-14, -0.4), (1.75, -3.032028e-14, -0.4), (1.408297, 20, -0.15528978), (1.420579, 20, -0.15472169), (1.2803762, 20, -0.20571552), (1.2888293, 20, -0.20255475), (1.325219, 20, -0.18288879), (1.3524641, 20, -0.17080288), (1.3662689, 20, -0.16472559), (1.3802092, 20, -0.16167009), (1.5597584, 20, -0.18643041), (1.5341187, 20, -0.17286234), (1.2534357, 20, -0.2159226), (1.227707, 20, -0.22163737), (1.483485, 20, -0.158072), (1.4526057, 20, -0.15361291), (1.572705, 20, -0.19332857), (1.75, 20, -0.31159866), (1.75, 20, -0.4), (-1.75, 20, -0.4), (1.2034674, 20, -0.22518083), (1.1780227, 20, -0.227), (1.2991676, 20, -0.19700192), (1.5082055, 20, -0.16426134)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2G0mFQhK929u_6An0lBNTZ"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 0.1795200727971853, -0.1749999999999874, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_1" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1Hb6PCblD2ZuvhFdwzUotD"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 0.7855806788577873, -0.1749999999999874, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_2" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "15Q88nz595tP5ei3_pAQgO"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648520122278569e-9, 1.3916412849184, -0.1749999999999865, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_3" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0JskQH3CjFQwvVhALUzox1"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648513016851211e-9, 1.9977018909790019, -0.1749999999999865, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_4" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1dc6DrbT90UA9pg9Z3rs4Z"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 2.6037624970396003, -0.1749999999999874, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_5" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3eijguL1P9Nfvjs$Xpqdpu"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648527227705927e-9, 3.2098231031001987, -0.1749999999999865, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_6" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2xpMIc_0H2iuAG4BcTIFAT"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648548543988e-9, 3.8158837091608184, -0.1749999999999865, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_7" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3qB7jvnzzCdhkb6SWzwgkc"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648527227705927e-9, 4.421944315221431, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_8" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2vvVUDLqjBxRXxfI3C2q$r"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648555649415357e-9, 5.028004921282044, -0.1749999999999865, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_9" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0v0w97H9D0vhXlZ8fsd1v_"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 5.634065527342646, -0.1749999999999865, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_10" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1j_ofp0_jDkQibnMsl$T_a"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 6.240126133403233, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_11" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3a7SkZ5Ar1xxhiVrdbOBRI"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648505911423854e-9, 6.84618673946385, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_12" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1VhaT3K8H2lPdXb8NqCPZs"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 7.452247345524448, -0.1749999999999865, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_13" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0W$6qwCif1ePgGk6Sh$apd"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648548543988e-9, 8.058307951585057, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_14" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0BRh6j4b90nA0leMHsST_R"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648534333133284e-9, 8.664368557645652, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_15" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0xoA7NQgD7lRlwTspYVfko"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648520122278569e-9, 9.270429163706261, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_16" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0l0npIYpb0jwRcuQumw8GS"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648527227705927e-9, 9.876489769766852, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_17" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "28xYqtZ4vF0RoQVLMjR04U"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 10.482550375827461, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_18" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1qU3xMaZz2Av3pVOxzfZKW"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 11.088610981888078, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_19" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "30nYk7ZUj7BeZTiiCyQzG3"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648527227705927e-9, 11.694671587948683, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_20" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2fLDxlSJ5658K2aKlEUuO$"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648527227705927e-9, 12.300732194009296, -0.17499999999998384, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_21" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3A9NNgob1BBODyEmbQaSNY"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648534333133284e-9, 12.906792800069905, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_22" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0KPcs1y3j3YezA6xslC0pO"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648534333133284e-9, 13.512853406130507, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_23" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3qFv979eH6S8MEUxE$yKtu"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 14.118914012191127, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_24" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2ea9NtvwjBGfaygNYjxAxe"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648520122278569e-9, 14.724974618251714, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_25" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1TPGJrtGD5GuYtVCcv8tWE"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 15.331035224312323, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_26" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3PcU1ZuFj2Aev0J8hzhHvy"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 15.937095830372929, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_27" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "0dRF_swOj9Z89ywNzIYxlz"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 16.54315643643353, -0.17499999999998117, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_28" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1XcDIiNyv9uuTZP4jDMfO$"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648520122278569e-9, 17.149217042494133, -0.17499999999998295, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_29" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "2UXPKrUxb1NPLYxy3$uCcp"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648548543988e-9, 17.75527764855475, -0.17499999999998117, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_30" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1o4sQbZYD7EfuX2weAoHYD"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648541438560642e-9, 18.361338254615337, -0.17499999999998117, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_31" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "1_XScBOSD3h8oErFHWZl76"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648548543988e-9, 18.967398860675946, -0.17499999999998117, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+
+                    def Xform "sleeper_wood_32" (
+                        kind = "component"
+                        prepend references = </Types/sleeper_wood>
+                    )
+                    {
+                        prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site/Rail_track/Rail_track>
+                        custom string ifc:globalId = "3_fqSk$jXDlgUncZWfXZMS"
+                        custom token ifc:ifcClass = "IfcTrackElement"
+                        prepend rel ifc:material = </Materials/wood_generic>
+                        custom string ifc:name = "sleeper wood"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (8.648527227705927e-9, 19.573459466736555, -0.17499999999998117, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geometry" (
+                            kind = "component"
+                        )
+                        {
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [2, 0, 1, 3, 1, 0, 2, 4, 0, 5, 0, 4, 7, 6, 4, 6, 5, 4, 4, 1, 7, 4, 2, 1, 0, 6, 3, 0, 5, 6, 1, 3, 6, 6, 7, 1]
+                            point3f[] points = [(1.3, 0.25, -0.15), (-1.3, 0, -0.15), (-1.3, 0.25, -0.15), (1.3, 0, -0.15), (-1.3, 0.25, 0), (1.3, 0.25, 0), (1.3, 0, 0), (-1.3, 0, 0)]
+                        }
+                    }
+                }
+            }
+
+            def Xform "highway_location_marker" (
+                kind = "component"
+                prepend references = </Types/highway_location_marker>
+            )
+            {
+                prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site>
+                custom string ifc:globalId = "00ZvlN19v73wE8JOyDmPjG"
+                custom token ifc:ifcClass = "IfcElementAssembly"
+                custom string ifc:name = "highway location marker"
+                matrix4d xformOp:transform = ( (-1, 0, 0, 0), (0, -1, 0, 0), (0, 0, 1, 0), (-3.9681966011251077, 5.000000000000028, -0.1999999999999419, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "highway_location_marker_1" (
+                kind = "component"
+                prepend references = </Types/highway_location_marker>
+            )
+            {
+                prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/road_rail_bridge_site>
+                custom string ifc:globalId = "3E8poO$Er6gPhLg44LF$bc"
+                custom token ifc:ifcClass = "IfcElementAssembly"
+                custom string ifc:name = "highway location marker"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.9681966011250687, -4.999999999999979, -0.1999999999999419, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        def Xform "road_site" (
+            kind = "group"
+        )
+        {
+            prepend rel ifc:decomposes = </ifc_silly_sample_scene_project/environment_site>
+            custom string ifc:globalId = "2syxA9_lr7Ew2uZai3VhhS"
+            custom token ifc:ifcClass = "IfcSite"
+            custom string ifc:name = "road - site"
+            matrix4d xformOp:transform = ( (-0.5000000000000003, 0.8660254037844386, 0, 0), (-0.8660254037844386, -0.5000000000000003, 0, 0), (0, 0, 1, 0), (-17.32050807568874, 10.000000000000059, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "geo_reference" (
+            kind = "component"
+            prepend references = </Types/geo_reference>
+        )
+        {
+            prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site>
+            custom string ifc:globalId = "3Fit2Fad92zf2f6aWdJtF5"
+            custom token ifc:ifcClass = "IfcBuildingElementProxy"
+            prepend rel ifc:material = </Materials/virtual_black>
+            custom string ifc:name = "geo-reference"
+            uniform token purpose = "guide"
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Geometry" (
+                kind = "component"
+            )
+            {
+                int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                int[] faceVertexIndices = [1, 2, 0, 2, 1, 3, 4, 2, 3, 3, 5, 4, 3, 6, 5, 7, 5, 6, 6, 8, 7, 6, 9, 8, 10, 8, 9, 10, 9, 11, 11, 9, 12, 9, 13, 12, 13, 14, 12, 13, 15, 14, 13, 16, 15, 15, 16, 17, 15, 17, 18, 2, 4, 0, 19, 20, 14, 20, 12, 14, 21, 22, 6, 0, 21, 23, 21, 0, 24, 24, 25, 21, 22, 21, 25, 25, 26, 22, 26, 27, 22, 27, 28, 22, 28, 27, 29, 30, 28, 29, 31, 28, 30, 31, 32, 28, 20, 32, 31, 20, 19, 32, 33, 32, 19, 34, 33, 19, 35, 34, 19, 14, 15, 19, 34, 35, 17, 34, 17, 16, 35, 18, 17, 15, 18, 35, 6, 22, 9, 33, 34, 16, 23, 1, 0, 3, 21, 6, 4, 24, 0, 13, 9, 32, 4, 25, 24, 19, 15, 35, 32, 33, 13, 31, 12, 20, 30, 12, 31, 33, 16, 13, 1, 23, 21, 3, 1, 21, 22, 28, 9, 28, 32, 9, 36, 37, 38, 36, 39, 37, 40, 39, 36, 41, 39, 40, 43, 44, 42, 45, 43, 42, 46, 44, 47, 42, 44, 46, 49, 50, 48, 51, 49, 48, 52, 53, 54, 52, 55, 53, 56, 55, 52, 57, 55, 56, 60, 58, 59, 61, 59, 58, 58, 62, 61, 63, 62, 58, 65, 66, 64, 67, 65, 64, 67, 68, 65, 69, 68, 67, 63, 66, 62, 64, 66, 63, 71, 72, 70, 73, 71, 70, 75, 76, 74, 77, 75, 74, 78, 76, 79, 74, 76, 78, 80, 57, 56, 81, 57, 80, 82, 83, 84, 82, 85, 83, 86, 85, 82, 87, 85, 86, 90, 88, 89, 91, 89, 88, 88, 92, 91, 91, 92, 93, 73, 94, 71, 95, 94, 73, 80, 38, 81, 37, 81, 38, 96, 97, 98, 96, 99, 97, 98, 100, 101, 97, 100, 98, 103, 90, 102, 102, 90, 89, 105, 103, 104, 104, 103, 102, 107, 105, 106, 106, 105, 104, 108, 99, 96, 109, 99, 108, 93, 92, 60, 93, 60, 59, 54, 110, 111, 53, 110, 54, 113, 114, 112, 115, 113, 112, 116, 114, 117, 112, 114, 116, 45, 117, 43, 116, 117, 45, 95, 118, 94, 119, 118, 95, 120, 121, 122, 120, 123, 121, 122, 41, 40, 122, 121, 41, 69, 124, 68, 125, 124, 69, 125, 72, 124, 70, 72, 125, 111, 87, 86, 111, 110, 87, 119, 120, 118, 123, 120, 119, 115, 126, 113, 127, 126, 115, 128, 50, 129, 48, 50, 128, 131, 107, 130, 130, 107, 106, 51, 130, 49, 131, 130, 51, 127, 129, 126, 128, 129, 127, 132, 109, 108, 133, 109, 132, 134, 47, 135, 46, 47, 134, 137, 138, 136, 139, 137, 136, 140, 138, 141, 136, 138, 140, 142, 133, 132, 143, 133, 142, 144, 143, 142, 145, 143, 144, 83, 135, 84, 134, 135, 83, 100, 146, 101, 147, 146, 100, 149, 150, 148, 151, 149, 148, 153, 154, 152, 155, 153, 152, 154, 156, 152, 157, 152, 156, 160, 158, 159, 161, 159, 158, 163, 164, 162, 162, 165, 163, 166, 167, 163, 165, 166, 163, 165, 168, 166, 165, 169, 168, 168, 169, 170, 169, 171, 170, 172, 173, 170, 170, 171, 172, 174, 175, 176, 174, 177, 175, 175, 178, 176, 176, 178, 179, 150, 180, 148, 181, 148, 180, 182, 181, 180, 183, 181, 182, 153, 155, 184, 153, 184, 185, 186, 187, 188, 186, 189, 187, 149, 190, 186, 149, 186, 188, 188, 191, 149, 150, 149, 191, 150, 191, 159, 161, 150, 159, 150, 161, 180, 182, 180, 161, 182, 161, 192, 185, 182, 192, 185, 192, 153, 153, 192, 193, 174, 153, 193, 174, 176, 153, 154, 153, 176, 179, 154, 176, 194, 154, 179, 154, 194, 156, 195, 160, 191, 191, 160, 159, 189, 196, 151, 187, 189, 151, 151, 195, 187, 195, 151, 148, 195, 148, 160, 160, 148, 158, 181, 158, 148, 158, 181, 183, 197, 158, 183, 183, 184, 197, 155, 197, 184, 198, 197, 155, 177, 198, 155, 155, 175, 177, 175, 155, 152, 175, 152, 178, 178, 152, 199, 152, 157, 199, 200, 79, 201, 78, 79, 200, 202, 201, 203, 200, 201, 202, 206, 204, 205, 207, 205, 204, 209, 206, 208, 208, 206, 205, 211, 212, 210, 213, 211, 210, 211, 214, 215, 211, 213, 214, 217, 209, 216, 216, 209, 208, 218, 216, 219, 217, 216, 218, 215, 145, 144, 215, 214, 145, 220, 212, 221, 210, 212, 220, 77, 221, 75, 220, 221, 77, 147, 222, 146, 223, 222, 147, 223, 141, 222, 140, 141, 223, 226, 224, 225, 227, 225, 224, 229, 226, 228, 228, 226, 225, 139, 230, 137, 231, 230, 139, 227, 224, 202, 203, 227, 202, 231, 219, 230, 218, 219, 231, 204, 229, 207, 228, 207, 229, 178, 199, 179, 194, 179, 199, 149, 151, 196, 190, 149, 196, 185, 184, 183, 185, 183, 182, 158, 192, 161, 197, 192, 158, 199, 156, 194, 157, 156, 199, 193, 192, 198, 192, 197, 198, 193, 177, 174, 198, 177, 193, 191, 188, 195, 187, 195, 188, 190, 196, 186, 196, 189, 186, 232, 233, 173, 172, 232, 173, 234, 170, 173, 233, 234, 173, 166, 235, 167, 166, 236, 235, 163, 235, 164, 167, 235, 163, 236, 166, 237, 166, 168, 237, 234, 237, 170, 237, 168, 170, 234, 233, 232, 238, 234, 232, 235, 236, 237, 162, 235, 237, 237, 239, 162, 237, 234, 239, 238, 239, 234, 164, 235, 162, 239, 238, 171, 171, 169, 239, 239, 169, 165, 239, 165, 162, 238, 232, 171, 232, 172, 171, 240, 241, 242, 8, 29, 27, 8, 27, 7, 244, 243, 242, 245, 242, 243, 246, 242, 245, 247, 242, 246, 247, 248, 242, 242, 248, 249, 250, 249, 248, 250, 248, 251, 250, 251, 252, 253, 252, 251, 254, 253, 251, 254, 251, 255, 255, 256, 254, 257, 256, 255, 257, 255, 258, 258, 259, 257, 240, 242, 249, 241, 260, 261, 260, 241, 262, 262, 241, 263, 263, 241, 264, 241, 265, 264, 265, 241, 240, 266, 265, 240, 267, 265, 266, 268, 267, 266, 267, 268, 269, 267, 269, 270, 271, 267, 270, 270, 272, 271, 271, 272, 273, 274, 271, 273, 273, 275, 274, 274, 275, 259, 272, 254, 256, 272, 256, 273, 275, 273, 259, 273, 256, 257, 5, 26, 25, 29, 8, 10, 259, 258, 274, 244, 242, 241, 5, 25, 4, 30, 11, 12, 7, 26, 5, 7, 27, 26, 30, 10, 11, 10, 30, 29, 258, 255, 274, 241, 261, 244, 273, 257, 259, 244, 261, 260, 249, 266, 240, 269, 268, 252, 252, 268, 250, 244, 260, 243, 243, 260, 262, 264, 265, 247, 247, 246, 264, 246, 245, 263, 246, 263, 264, 255, 251, 271, 245, 243, 262, 245, 262, 263, 271, 274, 255, 251, 248, 267, 267, 271, 251, 265, 267, 248, 248, 247, 265, 269, 253, 270, 268, 266, 250, 270, 254, 272, 270, 253, 254, 250, 266, 249, 253, 269, 252, 142, 132, 61, 142, 61, 62, 144, 142, 62, 215, 144, 62, 211, 215, 62, 211, 62, 66, 212, 211, 66, 66, 65, 212, 221, 212, 65, 75, 221, 65, 75, 65, 68, 76, 75, 68, 76, 68, 124, 79, 76, 124, 79, 124, 72, 201, 79, 72, 72, 71, 201, 203, 201, 71, 203, 71, 94, 227, 203, 94, 227, 94, 118, 227, 118, 225, 225, 118, 120, 225, 120, 228, 120, 84, 228, 82, 84, 120, 82, 120, 122, 86, 82, 122, 40, 86, 122, 111, 86, 40, 111, 40, 36, 54, 111, 36, 38, 54, 36, 52, 54, 38, 80, 52, 38, 56, 52, 80, 89, 91, 102, 91, 93, 102, 102, 93, 104, 59, 104, 93, 104, 59, 106, 59, 61, 106, 106, 61, 130, 132, 130, 61, 108, 130, 132, 108, 49, 130, 96, 49, 108, 49, 96, 98, 50, 49, 98, 98, 101, 50, 101, 129, 50, 129, 101, 146, 126, 129, 146, 146, 222, 126, 126, 222, 141, 113, 126, 141, 113, 141, 138, 114, 113, 138, 114, 138, 137, 117, 114, 137, 43, 117, 137, 137, 230, 43, 44, 43, 230, 44, 230, 219, 47, 44, 219, 47, 219, 216, 135, 47, 216, 135, 216, 208, 208, 205, 135, 84, 135, 205, 207, 84, 205, 228, 84, 207, 90, 103, 88, 88, 103, 92, 105, 92, 103, 92, 105, 60, 107, 60, 105, 60, 107, 58, 131, 58, 107, 58, 131, 133, 133, 131, 109, 131, 51, 109, 99, 109, 51, 97, 99, 51, 97, 51, 48, 48, 100, 97, 48, 128, 100, 147, 100, 128, 147, 128, 127, 127, 223, 147, 127, 140, 223, 140, 127, 115, 115, 136, 140, 136, 115, 112, 112, 139, 136, 112, 116, 139, 139, 116, 45, 45, 231, 139, 231, 45, 42, 42, 218, 231, 42, 46, 218, 46, 217, 218, 46, 134, 217, 217, 134, 209, 209, 134, 206, 206, 134, 83, 206, 83, 204, 204, 83, 229, 143, 63, 58, 143, 58, 133, 63, 143, 145, 63, 145, 214, 214, 213, 63, 213, 64, 63, 213, 210, 64, 210, 67, 64, 67, 210, 220, 220, 77, 67, 77, 69, 67, 77, 74, 69, 125, 69, 74, 74, 78, 125, 70, 125, 78, 70, 78, 200, 200, 73, 70, 73, 200, 202, 202, 95, 73, 95, 202, 224, 224, 119, 95, 226, 119, 224, 226, 123, 119, 229, 123, 226, 229, 83, 123, 83, 85, 123, 121, 123, 85, 87, 121, 85, 121, 87, 41, 41, 87, 110, 39, 41, 110, 53, 39, 110, 37, 39, 53, 37, 53, 55, 37, 55, 81, 57, 81, 55, 276, 277, 278, 277, 276, 279, 281, 282, 280, 280, 283, 281, 278, 277, 280, 278, 280, 282, 278, 282, 281, 276, 278, 281, 279, 276, 281, 283, 279, 281, 277, 279, 280, 279, 283, 280, 286, 284, 285, 287, 285, 284, 288, 287, 284, 288, 284, 289, 289, 290, 288, 291, 290, 289, 292, 291, 289, 292, 289, 293, 293, 294, 292, 294, 295, 292, 295, 294, 296, 296, 297, 295, 298, 297, 296, 299, 298, 296, 299, 296, 300, 300, 301, 299, 301, 300, 302, 303, 302, 300, 304, 303, 300, 303, 304, 305, 306, 307, 308, 307, 306, 309, 306, 310, 309, 310, 311, 309, 286, 311, 310, 312, 311, 286, 312, 286, 285, 313, 312, 285, 313, 314, 312, 314, 315, 312, 315, 314, 316, 316, 317, 315, 317, 316, 318, 318, 319, 317, 319, 318, 320, 320, 321, 319, 321, 322, 319, 323, 322, 321, 323, 321, 324, 324, 325, 323, 325, 324, 326, 326, 324, 327, 328, 327, 324, 329, 328, 324, 328, 329, 330, 331, 330, 329, 330, 331, 332, 335, 333, 334, 336, 334, 333, 337, 336, 333, 338, 337, 333, 338, 339, 337, 340, 339, 338, 340, 341, 339, 341, 342, 339, 342, 341, 343, 343, 344, 342, 344, 345, 342, 345, 344, 346, 346, 347, 345, 347, 348, 345, 348, 347, 349, 349, 350, 348, 350, 349, 351, 351, 352, 350, 327, 350, 352, 353, 327, 352, 353, 326, 327, 355, 356, 354, 357, 355, 354, 355, 357, 358, 355, 358, 359, 358, 360, 359, 359, 360, 361, 360, 362, 361, 360, 363, 362, 364, 362, 363, 363, 365, 364, 363, 366, 365, 367, 365, 366, 366, 368, 367, 366, 369, 368, 370, 368, 369, 369, 371, 370, 372, 370, 371, 371, 373, 372, 371, 374, 373, 375, 373, 374, 375, 374, 376, 377, 378, 379, 377, 380, 378, 380, 381, 378, 380, 382, 381, 383, 381, 382, 382, 384, 383, 383, 384, 385, 386, 385, 384, 384, 387, 386, 384, 388, 387, 389, 387, 388, 388, 390, 389, 391, 389, 390, 390, 392, 391, 393, 391, 392, 392, 394, 393, 392, 395, 394, 394, 395, 396, 397, 394, 396, 396, 398, 397, 398, 376, 397, 374, 397, 376, 374, 399, 397, 397, 399, 400, 401, 400, 399, 400, 401, 402, 403, 402, 401, 385, 404, 383, 405, 404, 385, 404, 405, 406, 407, 404, 406, 406, 408, 407, 407, 408, 409, 407, 409, 410, 411, 407, 410, 410, 412, 411, 410, 413, 412, 414, 412, 413, 413, 415, 414, 414, 415, 416, 414, 416, 417, 418, 414, 417, 417, 419, 418, 420, 418, 419, 418, 420, 421, 418, 421, 422, 423, 422, 421, 356, 333, 335, 355, 333, 356, 338, 333, 359, 333, 355, 359, 340, 338, 361, 338, 359, 361, 341, 340, 362, 340, 361, 362, 343, 341, 362, 343, 362, 364, 344, 343, 364, 344, 364, 365, 346, 344, 365, 346, 365, 367, 347, 346, 367, 347, 367, 368, 349, 347, 368, 349, 368, 370, 351, 349, 370, 351, 370, 372, 352, 351, 372, 352, 372, 373, 352, 373, 375, 353, 352, 375, 353, 375, 376, 326, 353, 376, 326, 376, 398, 325, 326, 398, 325, 398, 396, 323, 325, 396, 396, 322, 323, 395, 322, 396, 395, 319, 322, 392, 319, 395, 392, 317, 319, 390, 317, 392, 390, 315, 317, 388, 315, 390, 388, 312, 315, 384, 312, 388, 384, 311, 312, 382, 311, 384, 311, 382, 380, 309, 311, 380, 309, 380, 377, 307, 309, 377, 307, 377, 379, 308, 307, 379, 308, 379, 378, 306, 308, 378, 306, 378, 381, 310, 306, 381, 310, 381, 383, 286, 310, 383, 383, 284, 286, 284, 383, 404, 289, 284, 404, 289, 404, 407, 293, 289, 407, 293, 407, 411, 294, 293, 411, 294, 411, 412, 296, 294, 412, 296, 412, 414, 300, 296, 414, 300, 414, 418, 304, 300, 422, 300, 418, 422, 305, 304, 423, 304, 422, 423, 303, 305, 421, 305, 423, 421, 421, 302, 303, 420, 302, 421, 302, 420, 419, 301, 302, 419, 301, 419, 417, 299, 301, 417, 299, 417, 416, 298, 299, 416, 416, 297, 298, 415, 297, 416, 415, 295, 297, 413, 295, 415, 413, 292, 295, 410, 292, 413, 410, 291, 292, 409, 291, 410, 409, 290, 291, 408, 290, 409, 408, 288, 290, 406, 288, 408, 287, 288, 405, 288, 406, 405, 285, 287, 385, 287, 405, 385, 313, 285, 386, 285, 385, 386, 314, 313, 387, 313, 386, 387, 316, 314, 387, 316, 387, 389, 318, 316, 389, 318, 389, 391, 320, 318, 391, 320, 391, 393, 321, 320, 393, 321, 393, 394, 324, 321, 394, 324, 394, 397, 329, 324, 400, 324, 397, 400, 331, 329, 402, 329, 400, 402, 332, 331, 403, 331, 402, 403, 330, 332, 401, 332, 403, 401, 328, 330, 399, 330, 401, 399, 327, 328, 374, 328, 399, 374, 350, 327, 374, 371, 350, 374, 371, 348, 350, 369, 348, 371, 369, 345, 348, 366, 345, 369, 366, 342, 345, 363, 342, 366, 363, 339, 342, 360, 339, 363, 360, 337, 339, 358, 337, 360, 337, 358, 357, 336, 337, 357, 336, 357, 354, 334, 336, 354, 334, 354, 356, 335, 334, 356]
+                point3f[] points = [(0.0003, -0.3, -7.4505807e-10), (0.0003, -0.5, 0.004999998), (0.0003, -0.3, 0.004999998), (0.09784516, -0.49039263, 0.004999998), (0.0588271, -0.2942356, 0.004999998), (0.115105025, -0.27716386, 0.004999998), (0.19164172, -0.46193975, 0.004999998), (0.16697107, -0.24944088, 0.004999998), (0.21243204, -0.21213204, 0.004999998), (0.2780851, -0.4157348, 0.004999998), (0.24974088, -0.16667107, 0.004999998), (0.27746385, -0.11480503, 0.004999998), (0.29453558, -0.058527097, 0.004999998), (0.35385337, -0.35355338, 0.004999998), (0.3003, 0, 0.004999998), (0.5003, 0, 0.004999998), (0.4160348, -0.27778512, 0.004999998), (0.46223974, -0.19134171, 0.004999998), (0.49069262, -0.09754516, 0.004999998), (0.5003, 1.15505826e-14, -7.4505807e-10), (0.3003, -1.15505826e-14, -7.4505807e-10), (0.09784516, -0.49039263, -7.4505807e-10), (0.19164172, -0.46193975, -7.4505807e-10), (0.0003, -0.5, -7.4505807e-10), (0.0588271, -0.2942356, -7.4505807e-10), (0.115105025, -0.27716386, -7.4505807e-10), (0.16697107, -0.24944088, -7.4505807e-10), (0.21243204, -0.21213204, -7.4505807e-10), (0.2780851, -0.4157348, -7.4505807e-10), (0.24974088, -0.16667107, -7.4505807e-10), (0.27746385, -0.11480503, -7.4505807e-10), (0.29453558, -0.058527097, -7.4505807e-10), (0.35385337, -0.35355338, -7.4505807e-10), (0.4160348, -0.27778512, -7.4505807e-10), (0.46223974, -0.19134171, -7.4505807e-10), (0.49069262, -0.09754516, -7.4505807e-10), (0.87731314, 0.05379674, 0), (0.88179314, 0.037789237, 0.004999998), (0.88179314, 0.037789237, 0), (0.87731314, 0.05379674, 0.004999998), (0.8710411, 0.06882965, 0), (0.8710411, 0.06882965, 0.004999998), (0.8134246, -0.115374535, 0.004999998), (0.7987742, -0.12011653, 0), (0.8134246, -0.115374535, 0), (0.7987742, -0.12011653, 0.004999998), (0.82753, -0.10873575, 0.004999998), (0.82753, -0.10873575, 0), (0.70579964, -0.10714286, 0.004999998), (0.6929622, -0.097994216, 0), (0.70579964, -0.10714286, 0), (0.6929622, -0.097994216, 0.004999998), (0.884434, -0.015352532, 0), (0.8816045, -0.03257042, 0.004999998), (0.8816045, -0.03257042, 0), (0.884434, -0.015352532, 0.004999998), (0.8853771, 0.002850436, 0), (0.8853771, 0.002850436, 0.004999998), (0.6831638, 0.09582495, 0.004999998), (0.6687859, 0.07685173, 0), (0.6687859, 0.07685173, 0.004999998), (0.6831638, 0.09582495, 0), (0.70079046, 0.11097313, 0), (0.70079046, 0.11097313, 0.004999998), (0.72080636, 0.12179326, 0.004999998), (0.7432116, 0.12828533, 0), (0.72080636, 0.12179326, 0), (0.7432116, 0.12828533, 0.004999998), (0.76800627, 0.13044937, 0), (0.76800627, 0.13044937, 0.004999998), (0.80036706, 0.1263833, 0.004999998), (0.8152899, 0.12130072, 0), (0.80036706, 0.1263833, 0), (0.8152899, 0.12130072, 0.004999998), (0.76817393, 0.102448024, 0.004999998), (0.7515062, 0.100965165, 0), (0.76817393, 0.102448024, 0), (0.7515062, 0.100965165, 0.004999998), (0.7912918, 0.09936704, 0.004999998), (0.7912918, 0.09936704, 0), (0.88448113, 0.020807134, 0), (0.88448113, 0.020807134, 0.004999998), (0.86195534, -0.07791017, 0), (0.85205215, -0.08997736, 0.004999998), (0.85205215, -0.08997736, 0), (0.86195534, -0.07791017, 0.004999998), (0.8702866, -0.06405097, 0), (0.8702866, -0.06405097, 0.004999998), (0.652354, 0.02893926, 0.004999998), (0.6503, 5.7752913e-15, 0), (0.6503, 5.7752913e-15, 0.004999998), (0.652354, 0.02893926, 0), (0.658516, 0.054556504, 0.004999998), (0.658516, 0.054556504, 0), (0.82937443, 0.11418511, 0), (0.82937443, 0.11418511, 0.004999998), (0.6898079, -0.040220488, 0), (0.69727457, -0.056542378, 0.004999998), (0.69727457, -0.056542378, 0), (0.6898079, -0.040220488, 0.004999998), (0.7077279, -0.07050637, 0.004999998), (0.7077279, -0.07050637, 0), (0.6538211, -0.031522468, 0), (0.6538211, -0.031522468, 0.004999998), (0.6643845, -0.06136821, 0), (0.6643845, -0.06136821, 0.004999998), (0.6722546, -0.07510689, 0), (0.6722546, -0.07510689, 0.004999998), (0.6853279, -0.021540703, 0), (0.6853279, -0.021540703, 0.004999998), (0.8768887, -0.048803236, 0.004999998), (0.8768887, -0.048803236, 0), (0.76783854, -0.12391013, 0.004999998), (0.75094557, -0.122862175, 0), (0.76783854, -0.12391013, 0), (0.75094557, -0.122862175, 0.004999998), (0.7835788, -0.12296173, 0.004999998), (0.7835788, -0.12296173, 0), (0.8422276, 0.1052513, 0), (0.8422276, 0.1052513, 0.004999998), (0.85345644, 0.09471412, 0), (0.86306095, 0.08257356, 0.004999998), (0.86306095, 0.08257356, 0), (0.85345644, 0.09471412, 0.004999998), (0.78460586, 0.12943284, 0), (0.78460586, 0.12943284, 0.004999998), (0.73497474, -0.11971831, 0), (0.73497474, -0.11971831, 0.004999998), (0.7199261, -0.114478536, 0.004999998), (0.7199261, -0.114478536, 0), (0.6817806, -0.08731556, 0), (0.6817806, -0.08731556, 0.004999998), (0.68383455, -0.0005030181, 0), (0.68383455, -0.0005030181, 0.004999998), (0.84057707, -0.100252554, 0.004999998), (0.84057707, -0.100252554, 0), (0.76767087, -0.09607646, 0.004999998), (0.7852189, -0.09446261, 0), (0.76767087, -0.09607646, 0), (0.7852189, -0.09446261, 0.004999998), (0.75040585, -0.09447833, 0.004999998), (0.75040585, -0.09447833, 0), (0.6853908, 0.02526094, 0), (0.6853908, 0.02526094, 0.004999998), (0.69005936, 0.04705315, 0), (0.69005936, 0.04705315, 0.004999998), (0.72043437, -0.081693284, 0), (0.72043437, -0.081693284, 0.004999998), (-0.8673392, -0.12290409, 0.0049999976), (-0.9005384, -0.12290409, -7.4505807e-10), (-0.8673392, -0.12290409, -7.4505807e-10), (-0.9005384, -0.12290409, 0.0049999976), (-0.71710443, -0.12290409, 0.0049999976), (-0.7484592, -0.12290409, -7.4505807e-10), (-0.71710443, -0.12290409, -7.4505807e-10), (-0.7484592, -0.12290409, 0.0049999976), (-0.6497, 0.12290409, -7.4505807e-10), (-0.6497, 0.12290409, 0.0049999976), (-0.8267624, 0.12290409, 0.0049999976), (-0.8735431, -0.043091886, -7.4505807e-10), (-0.8735431, -0.043091886, 0.0049999976), (-0.8267624, 0.12290409, -7.4505807e-10), (-0.06425399, 0.84315896, -7.4505807e-10), (-0.06425399, 0.65, 0.0049999976), (-0.06425399, 0.65, -7.4505807e-10), (-0.06425399, 0.84315896, 0.0049999976), (-0.09544111, 0.89580816, 0.0049999976), (-0.09544111, 0.65, 0.0049999976), (-0.062074244, 0.89580816, 0.0049999976), (0.06485399, 0.65, 0.0049999976), (0.06703374, 0.7028169, 0.0049999976), (0.098220855, 0.65, 0.0049999976), (0.098220855, 0.89580816, 0.0049999976), (0.06703374, 0.89580816, 0.0049999976), (-0.7409139, -0.04640342, -7.4505807e-10), (-0.733201, -0.08853119, 0.0049999976), (-0.733201, -0.08853119, -7.4505807e-10), (-0.7409139, -0.04640342, 0.0049999976), (-0.7209609, -0.035043593, 0.0049999976), (-0.7209609, -0.035043593, -7.4505807e-10), (-0.81519294, 0.064386316, -7.4505807e-10), (-0.81519294, 0.064386316, 0.0049999976), (-0.80798304, 0.09322602, -7.4505807e-10), (-0.80798304, 0.09322602, 0.0049999976), (-0.8002701, 0.064386316, 0.0049999976), (-0.8002701, 0.064386316, -7.4505807e-10), (-0.9323962, 0.12290409, -7.4505807e-10), (-0.89500517, -0.038229376, 0.0049999976), (-0.89500517, -0.038229376, -7.4505807e-10), (-0.9323962, 0.12290409, 0.0049999976), (-0.96576303, 0.12290409, -7.4505807e-10), (-0.88460946, -0.08853119, -7.4505807e-10), (-0.78752697, 0.12290409, -7.4505807e-10), (-0.7523157, -0.0015090543, -7.4505807e-10), (-0.6823962, 0.12290409, -7.4505807e-10), (-0.88460946, -0.08853119, 0.0049999976), (-0.96576303, 0.12290409, 0.0049999976), (-0.78752697, 0.12290409, 0.0049999976), (-0.7523157, -0.0015090543, 0.0049999976), (-0.6823962, 0.12290409, 0.0049999976), (0.8120203, 0.09012408, 0.004999998), (0.8120203, 0.09012408, 0), (0.82920676, 0.07528505, 0.004999998), (0.82920676, 0.07528505, 0), (0.85035974, -0.019355718, 0.004999998), (0.84591115, -0.03902582, 0), (0.84591115, -0.03902582, 0.004999998), (0.85035974, -0.019355718, 0), (0.83849686, -0.055992205, 0), (0.83849686, -0.055992205, 0.004999998), (0.7217862, 0.08910232, 0.004999998), (0.7087339, 0.078722335, 0), (0.7217862, 0.08910232, 0), (0.7087339, 0.078722335, 0.004999998), (0.69784045, 0.06487361, 0.004999998), (0.69784045, 0.06487361, 0), (0.8281169, -0.07025486, 0), (0.8281169, -0.07025486, 0.004999998), (0.8154419, -0.08155181, 0.004999998), (0.8154419, -0.08155181, 0), (0.73604363, 0.0965166, 0.004999998), (0.73604363, 0.0965166, 0), (0.7346603, -0.089683935, 0), (0.7346603, -0.089683935, 0.004999998), (0.8416984, 0.055415828, 0.004999998), (0.8493065, 0.031124245, 0), (0.8493065, 0.031124245, 0.004999998), (0.8416984, 0.055415828, 0), (0.8518426, 0.0030181087, 0), (0.8518426, 0.0030181087, 0.004999998), (0.8011426, -0.08962106, 0), (0.8011426, -0.08962106, 0.004999998), (0.098220855, 0.89580816, -7.4505807e-10), (0.06703374, 0.89580816, -7.4505807e-10), (0.06703374, 0.7028169, -7.4505807e-10), (-0.09544111, 0.65, -7.4505807e-10), (-0.09544111, 0.89580816, -7.4505807e-10), (-0.062074244, 0.89580816, -7.4505807e-10), (0.098220855, 0.65, -7.4505807e-10), (0.06485399, 0.65, -7.4505807e-10), (-0.2939356, 0.058527097, 0.004999998), (-0.29970002, -5.7752913e-15, 0.004999998), (-0.29970002, -5.7752913e-15, -7.4505807e-10), (-0.49009264, 0.09754516, -7.4505807e-10), (-0.4997, -5.7752913e-15, -7.4505807e-10), (-0.46163976, 0.19134171, -7.4505807e-10), (-0.4154348, 0.27778512, -7.4505807e-10), (-0.3532534, 0.35355338, -7.4505807e-10), (-0.27748513, 0.4157348, -7.4505807e-10), (-0.2939356, 0.058527097, -7.4505807e-10), (-0.27686387, 0.11480503, -7.4505807e-10), (-0.19104171, 0.46193975, -7.4505807e-10), (-0.24914087, 0.16667107, -7.4505807e-10), (-0.21183203, 0.21213204, -7.4505807e-10), (-0.16637106, 0.24944088, -7.4505807e-10), (-0.097245164, 0.49039263, -7.4505807e-10), (-0.11450503, 0.27716386, -7.4505807e-10), (-0.058227096, 0.2942356, -7.4505807e-10), (0.0003, 0.5, -7.4505807e-10), (0.0003, 0.3, -7.4505807e-10), (-0.49009264, 0.09754516, 0.004999998), (-0.4997, -5.7752913e-15, 0.004999998), (-0.46163976, 0.19134171, 0.004999998), (-0.4154348, 0.27778512, 0.004999998), (-0.3532534, 0.35355338, 0.004999998), (-0.27748513, 0.4157348, 0.004999998), (-0.27686387, 0.11480503, 0.004999998), (-0.19104171, 0.46193975, 0.004999998), (-0.24914087, 0.16667107, 0.004999998), (-0.21183203, 0.21213204, 0.004999998), (-0.16637106, 0.24944088, 0.004999998), (-0.097245164, 0.49039263, 0.004999998), (-0.11450503, 0.27716386, 0.004999998), (-0.058227096, 0.2942356, 0.004999998), (0.0003, 0.5, 0.004999998), (0.0003, 0.3, 0.004999998), (0.0003, 0.2, -7.4505807e-10), (0.2003, -5.7752913e-15, -7.4505807e-10), (0.0003, 0, -7.4505807e-10), (0.2003, 0.2, -7.4505807e-10), (0.2003, -5.7752913e-15, 0.1), (0.0003, 0.2, 0.1), (0.0003, 0, 0.1), (0.2003, 0.2, 0.1), (-0.05184621, -0.6583836, -7.4505807e-10), (-0.061906572, -0.71556, -7.4505807e-10), (-0.069703355, -0.6687165, -7.4505807e-10), (-0.05853216, -0.7014126, -7.4505807e-10), (-0.04840892, -0.6894869, -7.4505807e-10), (-0.030426024, -0.6520959, -7.4505807e-10), (-0.040659297, -0.6847554, -7.4505807e-10), (-0.030908082, -0.68137574, -7.4505807e-10), (-0.005400872, -0.678672, -7.4505807e-10), (-0.0067422534, -0.65, -7.4505807e-10), (0.018974548, -0.6522007, -7.4505807e-10), (0.019477565, -0.6816482, -7.4505807e-10), (0.041463647, -0.6588028, -7.4505807e-10), (0.029323097, -0.6853685, -7.4505807e-10), (0.037439503, -0.6905768, -7.4505807e-10), (0.04394206, -0.6972418, -7.4505807e-10), (0.059928603, -0.6696806, -7.4505807e-10), (0.04894604, -0.705332, -7.4505807e-10), (0.054458283, -0.72578806, -7.4505807e-10), (0.08564541, -0.72344065, -7.4505807e-10), (0.07357297, -0.68470824, -7.4505807e-10), (0.08220811, -0.70294267, -7.4505807e-10), (-0.090620525, -0.69973594, -7.4505807e-10), (-0.091102585, -0.73385733, -7.4505807e-10), (-0.09326137, -0.71773976, -7.4505807e-10), (-0.08462623, -0.74834, -7.4505807e-10), (-0.08269799, -0.6829477, -7.4505807e-10), (-0.073748454, -0.76089454, -7.4505807e-10), (-0.058385447, -0.77122736, -7.4505807e-10), (-0.05951724, -0.72763246, -7.4505807e-10), (-0.05234923, -0.7373575, -7.4505807e-10), (-0.039731856, -0.77866787, -7.4505807e-10), (-0.035393327, -0.7460136, -7.4505807e-10), (-0.010934071, -0.7865694, -7.4505807e-10), (-0.003304963, -0.7548793, -7.4505807e-10), (0.032828506, -0.798558, -7.4505807e-10), (0.030124782, -0.76328385, -7.4505807e-10), (0.05110483, -0.7705567, -7.4505807e-10), (0.046074647, -0.8051182, -7.4505807e-10), (0.0549613, -0.8130617, -7.4505807e-10), (0.069758415, -0.7817698, -7.4505807e-10), (0.059991483, -0.82243043, -7.4505807e-10), (0.06166821, -0.83326626, -7.4505807e-10), (0.06810265, -0.88298124, -7.4505807e-10), (0.081788935, -0.8675553, -7.4505807e-10), (0.08279497, -0.7956237, -7.4505807e-10), (0.09021448, -0.8496353, -7.4505807e-10), (0.09046599, -0.81195086, -7.4505807e-10), (0.093023, -0.8305835, -7.4505807e-10), (-0.07196693, -0.8183434, -7.4505807e-10), (-0.09894128, -0.8443955, -7.4505807e-10), (-0.10265104, -0.82102615, -7.4505807e-10), (-0.08915339, -0.8652079, -7.4505807e-10), (-0.07389517, -0.8822896, -7.4505807e-10), (-0.06834101, -0.83513165, -7.4505807e-10), (-0.053774446, -0.8944668, -7.4505807e-10), (-0.061822735, -0.8486083, -7.4505807e-10), (-0.05165758, -0.85929745, -7.4505807e-10), (-0.028518746, -0.9017606, -7.4505807e-10), (-0.037091013, -0.867723, -7.4505807e-10), (-0.019275788, -0.8731933, -7.4505807e-10), (0.0021443998, -0.9041918, -7.4505807e-10), (0.0006353454, -0.87501675, -7.4505807e-10), (0.018157143, -0.87363344, -7.4505807e-10), (0.027148591, -0.9017815, -7.4505807e-10), (0.033499196, -0.8694836, -7.4505807e-10), (0.04951194, -0.8945506, -7.4505807e-10), (0.045927934, -0.8629234, -7.4505807e-10), (0.054709792, -0.8543092, -7.4505807e-10), (0.059928603, -0.84422785, -7.4505807e-10), (-0.09894128, -0.8443955, 0.0049999994), (-0.07196693, -0.8183434, 0.0049999994), (-0.10265104, -0.82102615, 0.0049999994), (-0.08915339, -0.8652079, 0.0049999994), (-0.07389517, -0.8822896, 0.0049999994), (-0.06834101, -0.83513165, 0.0049999994), (-0.053774446, -0.8944668, 0.0049999994), (-0.061822735, -0.8486083, 0.0049999994), (-0.05165758, -0.85929745, 0.0049999994), (-0.028518746, -0.9017606, 0.0049999994), (-0.037091013, -0.867723, 0.0049999994), (-0.019275788, -0.8731933, 0.0049999994), (0.0021443998, -0.9041918, 0.0049999994), (0.0006353454, -0.87501675, 0.0049999994), (0.018157143, -0.87363344, 0.0049999994), (0.027148591, -0.9017815, 0.0049999994), (0.033499196, -0.8694836, 0.0049999994), (0.04951194, -0.8945506, 0.0049999994), (0.045927934, -0.8629234, 0.0049999994), (0.054709792, -0.8543092, 0.0049999994), (0.06810265, -0.88298124, 0.0049999994), (0.059928603, -0.84422785, 0.0049999994), (0.06166821, -0.83326626, 0.0049999994), (-0.091102585, -0.73385733, 0.0049999994), (-0.090620525, -0.69973594, 0.0049999994), (-0.09326137, -0.71773976, 0.0049999994), (-0.08462623, -0.74834, 0.0049999994), (-0.08269799, -0.6829477, 0.0049999994), (-0.073748454, -0.76089454, 0.0049999994), (-0.069703355, -0.6687165, 0.0049999994), (-0.058385447, -0.77122736, 0.0049999994), (-0.061906572, -0.71556, 0.0049999994), (-0.05951724, -0.72763246, 0.0049999994), (-0.05234923, -0.7373575, 0.0049999994), (-0.039731856, -0.77866787, 0.0049999994), (-0.035393327, -0.7460136, 0.0049999994), (-0.010934071, -0.7865694, 0.0049999994), (-0.003304963, -0.7548793, 0.0049999994), (0.032828506, -0.798558, 0.0049999994), (0.030124782, -0.76328385, 0.0049999994), (0.05110483, -0.7705567, 0.0049999994), (0.046074647, -0.8051182, 0.0049999994), (0.0549613, -0.8130617, 0.0049999994), (0.069758415, -0.7817698, 0.0049999994), (0.059991483, -0.82243043, 0.0049999994), (0.081788935, -0.8675553, 0.0049999994), (0.08279497, -0.7956237, 0.0049999994), (0.09021448, -0.8496353, 0.0049999994), (0.09046599, -0.81195086, 0.0049999994), (0.093023, -0.8305835, 0.0049999994), (-0.05184621, -0.6583836, 0.0049999994), (-0.05853216, -0.7014126, 0.0049999994), (-0.04840892, -0.6894869, 0.0049999994), (-0.030426024, -0.6520959, 0.0049999994), (-0.040659297, -0.6847554, 0.0049999994), (-0.030908082, -0.68137574, 0.0049999994), (-0.005400872, -0.678672, 0.0049999994), (-0.0067422534, -0.65, 0.0049999994), (0.018974548, -0.6522007, 0.0049999994), (0.019477565, -0.6816482, 0.0049999994), (0.041463647, -0.6588028, 0.0049999994), (0.029323097, -0.6853685, 0.0049999994), (0.037439503, -0.6905768, 0.0049999994), (0.04394206, -0.6972418, 0.0049999994), (0.059928603, -0.6696806, 0.0049999994), (0.04894604, -0.705332, 0.0049999994), (0.054458283, -0.72578806, 0.0049999994), (0.08564541, -0.72344065, 0.0049999994), (0.07357297, -0.68470824, 0.0049999994), (0.08220811, -0.70294267, 0.0049999994)]
+            }
+        }
+    }
+}
+
+def Scope "Types" (
+    doc = "IFC Type Objects"
+    kind = "group"
+)
+{
+    class Xform "geo_reference" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "2IpkHFcdnD3xuZl6H52fWn"
+        custom token ifc:ifcClass = "IfcBuildingElementProxyType"
+        custom string ifc:name = "geo-reference"
+    }
+
+    class Xform "ballastbed" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "0SJ2RiUZ18WvDG2vKWfTmD"
+        custom token ifc:ifcClass = "IfcCourseType"
+        custom string ifc:name = "ballastbed"
+    }
+
+    class Xform "rail" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "01Ne9sLvX2JB7MmvFUh4ey"
+        custom token ifc:ifcClass = "IfcRailType"
+        custom string ifc:name = "rail"
+    }
+
+    class Xform "sleeper_wood" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "1t6PIeEkvA3Ou$ofmC9D_1"
+        custom token ifc:ifcClass = "IfcTrackElementType"
+        custom string ifc:name = "sleeper wood"
+    }
+
+    class Xform "highway_location_marker" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "0iAJVoiDX1LxdIktn5l5jI"
+        custom token ifc:ifcClass = "IfcElementAssemblyType"
+        custom string ifc:name = "highway location marker"
+    }
+}
+
+def Scope "Materials" (
+    doc = "IFC Materials"
+    kind = "group"
+)
+{
+    def Material "metal_hot_rolled_steel" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "65"
+        custom token ifc:ifcClass = "IfcMaterial"
+        custom string ifc:name = "metal_hot-rolled-steel"
+    }
+
+    def Material "bulk_material_ballast_generic" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "95"
+        custom token ifc:ifcClass = "IfcMaterial"
+        custom string ifc:name = "bulk-material_ballast_generic"
+    }
+
+    def Material "wood_generic" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "113"
+        custom token ifc:ifcClass = "IfcMaterial"
+        custom string ifc:name = "wood-generic"
+    }
+
+    def Material "virtual_black" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "714"
+        custom token ifc:ifcClass = "IfcMaterial"
+        custom string ifc:name = "virtual_black"
+    }
+}
+

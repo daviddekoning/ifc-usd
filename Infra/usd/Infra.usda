@@ -1,0 +1,14 @@
+#usda 1.0
+(
+    metersPerUnit = 0.001
+    subLayers = [
+        @./colours.usda@,
+        @./Infra-Bridge.usda@,
+        @./Infra-Landscaping.usda@,
+        @./Infra-Plumbing.usda@,
+        @./Infra-Rail.usda@,
+        @./Infra-Road.usda@
+    ]
+    upAxis = "Z"
+)
+
