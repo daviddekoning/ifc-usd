@@ -6,87 +6,15 @@ over "ifc_silly_sample_scene_project"
     {
         over "house_site"
         {
-            over "house_site_grass"
-            {
-                over "Geometry"
-                {
-                    color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
-                }
-            }
-
-            over "house_site_soil"
-            {
-                over "Geometry"
-                {
-                    color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
-                }
-            }
-
-            over "house_site_underground"
-            {
-                over "Geometry"
-                {
-                    color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
-                }
-            }
-
-            over "origin"
-            {
-                over "Geometry"
-                {
-                    color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
-                }
-            }
-
-            over "tree"
-            {
-                over "Geometry"
-                {
-                    color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
-                }
-            }
-
             over "Single_family_house"
             {
                 over "_00_groundfloor"
                 {
-                    over "house_chimney"
-                    {
-                        over "Geometry"
-                        {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
-                        }
-                    }
-
-                    over "chimney_cover"
-                    {
-                        over "Geometry"
-                        {
-                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
-                        }
-                    }
-
-                    over "building_element"
-                    {
-                        over "Geometry"
-                        {
-                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
-                        }
-                    }
-
-                    over "house_fireplace_cap"
-                    {
-                        over "Geometry"
-                        {
-                            color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
-                        }
-                    }
-
                     over "house_foundation"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
                         }
                     }
 
@@ -94,7 +22,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
                         }
                     }
 
@@ -102,7 +30,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
                         }
                     }
 
@@ -110,7 +38,15 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+
+                    over "house_chimney"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
                         }
                     }
 
@@ -118,7 +54,31 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
+                        }
+                    }
+
+                    over "chimney_cover"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        }
+                    }
+
+                    over "building_element"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        }
+                    }
+
+                    over "house_fireplace_cap"
+                    {
+                        over "Geometry"
+                        {
+                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
                         }
                     }
 
@@ -126,14 +86,14 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
                         }
 
                         over "kitchen"
                         {
                             over "Geometry"
                             {
-                                color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                                color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
                             }
                         }
                     }
@@ -142,7 +102,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
                         }
                     }
 
@@ -150,7 +110,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
                         }
                     }
 
@@ -158,7 +118,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
                         }
                     }
 
@@ -166,7 +126,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
                         }
                     }
 
@@ -174,7 +134,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
                         }
                     }
 
@@ -182,7 +142,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
                         }
                     }
                 }
@@ -193,7 +153,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
                         }
                     }
 
@@ -201,7 +161,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
                         }
                     }
 
@@ -209,7 +169,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
                         }
                     }
 
@@ -217,7 +177,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
                         }
                     }
 
@@ -225,7 +185,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
                         }
                     }
 
@@ -233,7 +193,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
                         }
                     }
 
@@ -241,7 +201,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
                         }
                     }
 
@@ -249,7 +209,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                            color3f[] primvars:displayColor = [(0.33333334, 0.5529412, 0.2784314)]
                         }
                     }
 
@@ -257,7 +217,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
                         }
                     }
 
@@ -265,7 +225,7 @@ over "ifc_silly_sample_scene_project"
                     {
                         over "Geometry"
                         {
-                            color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                            color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
                         }
                     }
                 }
@@ -274,7 +234,7 @@ over "ifc_silly_sample_scene_project"
                 {
                     over "Geometry"
                     {
-                        color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
                     }
                 }
 
@@ -282,8 +242,48 @@ over "ifc_silly_sample_scene_project"
                 {
                     over "Geometry"
                     {
-                        color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                        color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
                     }
+                }
+            }
+
+            over "origin"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
+                }
+            }
+
+            over "house_site_grass"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                }
+            }
+
+            over "house_site_soil"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                }
+            }
+
+            over "house_site_underground"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
+                }
+            }
+
+            over "tree"
+            {
+                over "Geometry"
+                {
+                    color3f[] primvars:displayColor = [(0.61960787, 0.16470589, 0.16470589)]
                 }
             }
         }
@@ -292,7 +292,7 @@ over "ifc_silly_sample_scene_project"
         {
             over "Geometry"
             {
-                color3f[] primvars:displayColor = [(0.6745098, 0.24313726, 0.05490196)]
+                color3f[] primvars:displayColor = [(0.31764707, 0.54509807, 0.6431373)]
             }
         }
     }

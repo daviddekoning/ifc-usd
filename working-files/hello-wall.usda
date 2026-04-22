@@ -1,0 +1,204 @@
+#usda 1.0
+(
+    customLayerData = {
+        string "ifc:schema" = "IFC4x3"
+    }
+    defaultPrim = "My_Project"
+    doc = "Translated from hello-wall.ifc using IFC to USD pragmatic mapping spec"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Scope "My_Project" (
+    doc = "IFC Project"
+    kind = "group"
+)
+{
+    custom string ifc:globalId = "0KhR8hr7H8eewFRKm6V1bJ"
+    custom token ifc:ifcClass = "IfcProject"
+    custom string ifc:name = "My Project"
+
+    def Xform "My_Site" (
+        kind = "group"
+    )
+    {
+        prepend rel ifc:decomposes = </My_Project>
+        custom string ifc:globalId = "3WWqaXu9L0y8XqF6lHx6cU"
+        custom token ifc:ifcClass = "IfcSite"
+        custom string ifc:name = "My Site"
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Xform "My_Building" (
+            kind = "group"
+        )
+        {
+            prepend rel ifc:decomposes = </My_Project/My_Site>
+            custom string ifc:globalId = "3eJSUU$fr7WPzBLDr3NCgH"
+            custom token ifc:ifcClass = "IfcBuilding"
+            custom string ifc:name = "My Building"
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Xform "My_Storey" (
+                kind = "group"
+            )
+            {
+                prepend rel ifc:decomposes = </My_Project/My_Site/My_Building>
+                custom string ifc:globalId = "14hpMBCM10Oug9g6WpN$Er"
+                custom token ifc:ifcClass = "IfcBuildingStorey"
+                custom string ifc:name = "My Storey"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def Xform "My_Space" (
+                    kind = "group"
+                )
+                {
+                    prepend rel ifc:decomposes = </My_Project/My_Site/My_Building/My_Storey>
+                    custom string ifc:globalId = "3Z0rjnlPzCt8RzjMulHWMs"
+                    custom token ifc:ifcClass = "IfcSpace"
+                    custom string ifc:name = "My Space"
+                    uniform token purpose = "guide"
+                    token visibility = "invisible"
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0.100000023841858, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geometry" (
+                        kind = "component"
+                    )
+                    {
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [0, 1, 2, 0, 2, 3, 4, 3, 2, 4, 5, 3, 6, 5, 4, 6, 7, 5, 7, 6, 1, 7, 1, 0, 3, 5, 7, 3, 7, 0, 4, 2, 1, 4, 1, 6]
+                        point3f[] points = [(0, 0, 0), (0, 0, 3), (0, 5, 3), (0, 5, 0), (10, 5, 3), (10, 5, 0), (10, 0, 3), (10, 0, 0)]
+                    }
+                }
+
+                def Xform "Window" (
+                    kind = "component"
+                    prepend references = </Types/WT01>
+                )
+                {
+                    prepend rel ifc:containedInSpatialStructure = </My_Project/My_Site/My_Building/My_Storey>
+                    custom string ifc:globalId = "0iBLIV_VvE8eMGLY$QWQQG"
+                    custom token ifc:ifcClass = "IfcWindow"
+                    custom string ifc:name = "Window"
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (1.76767492294312, 0, 1, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geometry" (
+                        kind = "component"
+                    )
+                    {
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 2, 3, 1, 7, 4, 5, 7, 5, 6, 10, 11, 8, 10, 8, 9, 11, 6, 5, 8, 11, 5, 10, 9, 4, 10, 4, 7, 13, 14, 15, 13, 15, 12, 13, 3, 2, 13, 12, 3, 14, 1, 0, 15, 14, 0, 1, 14, 10, 1, 10, 7, 11, 10, 14, 11, 14, 13, 15, 0, 4, 15, 4, 9, 9, 8, 12, 9, 12, 15, 13, 2, 6, 13, 6, 11, 7, 6, 2, 7, 2, 1, 3, 12, 8, 3, 8, 5, 5, 4, 0, 5, 0, 3, 16, 17, 18, 16, 18, 19, 23, 20, 21, 23, 21, 22, 23, 22, 18, 23, 18, 17, 19, 18, 22, 19, 22, 21, 21, 20, 16, 21, 16, 19, 17, 16, 20, 17, 20, 23]
+                        point3f[] points = [(0.099999994, 0.05, 0.099999994), (0, 0.05, 0), (0, 0.05, 1.2), (0.099999994, 0.05, 1.1), (0.099999994, 0, 0.099999994), (0.099999994, 0, 1.1), (0, 0, 1.2), (0, 0, 0), (0.8, 0, 1.1), (0.8, 0, 0.099999994), (0.9, 0, 0), (0.9, 0, 1.2), (0.8, 0.05, 1.1), (0.9, 0.05, 1.2), (0.9, 0.05, 0), (0.8, 0.05, 0.099999994), (0.8, 0.02, 0.099999994), (0.8, 0.02, 1.1), (0.099999994, 0.02, 1.1), (0.099999994, 0.02, 0.099999994), (0.8, 0.03, 0.099999994), (0.099999994, 0.03, 0.099999994), (0.099999994, 0.03, 1.1), (0.8, 0.03, 1.1)]
+                    }
+                }
+
+                def Xform "Wall" (
+                    kind = "component"
+                    prepend references = </Types/WAL100>
+                )
+                {
+                    prepend rel ifc:containedInSpatialStructure = </My_Project/My_Site/My_Building/My_Storey>
+                    custom string ifc:globalId = "2JUHrTM_j3UxZiBnyBfByx"
+                    custom token ifc:ifcClass = "IfcWall"
+                    custom string ifc:name = "Wall"
+                    custom bool Pset_WallCommon:IsExternal = 1
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geometry" (
+                        kind = "component"
+                    )
+                    {
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 4, 7, 6, 5, 7, 1, 0, 5, 5, 0, 4, 6, 3, 2, 7, 3, 6, 9, 8, 11, 10, 9, 11, 10, 11, 13, 12, 10, 13, 12, 13, 15, 14, 12, 15, 14, 15, 8, 9, 14, 8, 17, 16, 19, 18, 17, 19, 18, 19, 21, 20, 18, 21, 20, 21, 23, 22, 20, 23, 22, 23, 16, 17, 22, 16, 13, 7, 15, 8, 7, 4, 8, 15, 7, 11, 8, 4, 16, 13, 11, 16, 23, 13, 16, 11, 4, 3, 21, 19, 0, 3, 19, 3, 7, 23, 23, 7, 13, 3, 23, 21, 4, 0, 19, 4, 19, 16, 24, 6, 26, 5, 6, 25, 6, 24, 25, 5, 25, 27, 27, 26, 29, 26, 28, 29, 5, 27, 29, 31, 30, 2, 31, 2, 1, 28, 6, 2, 26, 6, 28, 30, 28, 2, 31, 1, 5, 29, 31, 5]
+                        point3f[] points = [(10, 0, 0), (10, 0.1, 0), (10, 0.1, 3), (10, 0, 3), (0, 0, 0), (0, 0.1, 0), (0, 0.1, 3), (0, 0, 3), (1.7676749, 0, 1), (1.7676749, 0.1, 1), (2.667675, 0.1, 1), (2.667675, 0, 1), (2.667675, 0.1, 2.2), (2.667675, 0, 2.2), (1.7676749, 0.1, 2.2), (1.7676749, 0, 2.2), (4.9466066, 0, 1), (4.9466066, 0.1, 1), (5.8466067, 0.1, 1), (5.8466067, 0, 1), (5.8466067, 0.1, 2.2), (5.8466067, 0, 2.2), (4.9466066, 0.1, 2.2), (4.9466066, 0, 2.2), (1.7676749, 0.1, 2.2), (1.7676749, 0.1, 1), (2.667675, 0.1, 2.2), (2.667675, 0.1, 1), (4.9466066, 0.1, 2.2), (4.9466066, 0.1, 1), (5.8466067, 0.1, 2.2), (5.8466067, 0.1, 1)]
+                    }
+                }
+
+                def Xform "Window_1" (
+                    kind = "component"
+                    prepend references = </Types/WT01>
+                )
+                {
+                    prepend rel ifc:containedInSpatialStructure = </My_Project/My_Site/My_Building/My_Storey>
+                    custom string ifc:globalId = "1P9GJSHff4rfheo06raMUR"
+                    custom token ifc:ifcClass = "IfcWindow"
+                    custom string ifc:name = "Window"
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (4.94660663604736, 0, 1, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geometry" (
+                        kind = "component"
+                    )
+                    {
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 2, 3, 1, 7, 4, 5, 7, 5, 6, 10, 11, 8, 10, 8, 9, 11, 6, 5, 8, 11, 5, 10, 9, 4, 10, 4, 7, 13, 14, 15, 13, 15, 12, 13, 3, 2, 13, 12, 3, 14, 1, 0, 15, 14, 0, 1, 14, 10, 1, 10, 7, 11, 10, 14, 11, 14, 13, 15, 0, 4, 15, 4, 9, 9, 8, 12, 9, 12, 15, 13, 2, 6, 13, 6, 11, 7, 6, 2, 7, 2, 1, 3, 12, 8, 3, 8, 5, 5, 4, 0, 5, 0, 3, 16, 17, 18, 16, 18, 19, 23, 20, 21, 23, 21, 22, 23, 22, 18, 23, 18, 17, 19, 18, 22, 19, 22, 21, 21, 20, 16, 21, 16, 19, 17, 16, 20, 17, 20, 23]
+                        point3f[] points = [(0.099999994, 0.05, 0.099999994), (0, 0.05, 0), (0, 0.05, 1.2), (0.099999994, 0.05, 1.1), (0.099999994, 0, 0.099999994), (0.099999994, 0, 1.1), (0, 0, 1.2), (0, 0, 0), (0.8, 0, 1.1), (0.8, 0, 0.099999994), (0.9, 0, 0), (0.9, 0, 1.2), (0.8, 0.05, 1.1), (0.9, 0.05, 1.2), (0.9, 0.05, 0), (0.8, 0.05, 0.099999994), (0.8, 0.02, 0.099999994), (0.8, 0.02, 1.1), (0.099999994, 0.02, 1.1), (0.099999994, 0.02, 0.099999994), (0.8, 0.03, 0.099999994), (0.099999994, 0.03, 0.099999994), (0.099999994, 0.03, 1.1), (0.8, 0.03, 1.1)]
+                    }
+                }
+            }
+        }
+    }
+}
+
+def Scope "Types" (
+    doc = "IFC Type Objects"
+    kind = "group"
+)
+{
+    class Xform "WAL100" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "3R5onkTtX1IxdCMPoThRaw"
+        custom token ifc:ifcClass = "IfcWallType"
+        custom string ifc:name = "WAL100"
+    }
+
+    class Xform "WT01" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "0bK3c4PWL3eOMNwkPN$rlg"
+        custom token ifc:ifcClass = "IfcWindowType"
+        custom string ifc:name = "WT01"
+    }
+}
+
+def Scope "Materials" (
+    doc = "IFC Materials"
+    kind = "group"
+)
+{
+    def Material "_No_Name_" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "391"
+        custom token ifc:ifcClass = "IfcMaterialLayerSet"
+        custom string ifc:name = "(No Name)"
+    }
+
+    def Material "WOOD" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "260"
+        custom token ifc:ifcClass = "IfcMaterial"
+        custom string ifc:name = "WOOD"
+    }
+
+    def Material "GLASS" (
+        kind = "component"
+    )
+    {
+        custom string ifc:globalId = "261"
+        custom token ifc:ifcClass = "IfcMaterial"
+        custom string ifc:name = "GLASS"
+    }
+}
+

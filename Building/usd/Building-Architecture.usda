@@ -72,7 +72,6 @@ def Scope "ifc_silly_sample_scene_project" (
                         custom token ifc:ifcClass = "IfcSpace"
                         custom string ifc:name = "living room"
                         uniform token purpose = "guide"
-                        token visibility = "invisible"
                         matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.19999999999997797, 1.999999999999822, 2.1310597730916925e-14, 1) )
                         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -86,7 +85,7 @@ def Scope "ifc_silly_sample_scene_project" (
                         }
 
                         def Xform "kitchen" (
-                            kind = "group"
+                            kind = "component"
                             prepend references = </Types/house_kitchen>
                         )
                         {
@@ -109,7 +108,7 @@ def Scope "ifc_silly_sample_scene_project" (
                         }
 
                         def Xform "Group_18" (
-                            kind = "group"
+                            kind = "component"
                         )
                         {
                             prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/house_site/Single_family_house/_00_groundfloor/living_room>
@@ -132,7 +131,6 @@ def Scope "ifc_silly_sample_scene_project" (
                         custom token ifc:ifcClass = "IfcSpace"
                         custom string ifc:name = "entry hall"
                         uniform token purpose = "guide"
-                        token visibility = "invisible"
                         matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.20000000000002993, 0.19999999999992202, 7.36122274247464e-16, 1) )
                         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -147,7 +145,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "floor" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_groundfloor>
                     )
                     {
@@ -177,7 +175,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "house_outer_wall_house_right_front" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_outer_wall_house_right_front>
                     )
                     {
@@ -204,7 +202,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "house_outer_wall_house_right_back" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_outer_wall_house_right_back>
                     )
                     {
@@ -231,7 +229,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "house_outer_wall_house_left" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_outer_wall_house_left>
                     )
                     {
@@ -258,7 +256,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "house_chimney" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_chimney>
                     )
                     {
@@ -272,7 +270,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "Group_19" (
-                        kind = "group"
+                        kind = "component"
                     )
                     {
                         prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/house_site/Single_family_house/_00_groundfloor>
@@ -285,7 +283,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "plumbing_wall" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/plumbing_wall>
                     )
                     {
@@ -313,7 +311,7 @@ def Scope "ifc_silly_sample_scene_project" (
                 }
 
                 def Xform "house_roof" (
-                    kind = "group"
+                    kind = "assembly"
                     prepend references = </Types/house_roof>
                 )
                 {
@@ -325,7 +323,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     uniform token[] xformOpOrder = ["xformOp:transform"]
 
                     def Xform "house_roof_slab_left" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_roof_slab_left>
                     )
                     {
@@ -351,7 +349,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "house_roof_slab_right" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_roof_slab_right>
                     )
                     {
@@ -387,7 +385,6 @@ def Scope "ifc_silly_sample_scene_project" (
                     custom token ifc:ifcClass = "IfcSpatialZone"
                     custom string ifc:name = "house - gross volume"
                     uniform token purpose = "guide"
-                    token visibility = "invisible"
                     matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
                     uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -402,7 +399,7 @@ def Scope "ifc_silly_sample_scene_project" (
                 }
 
                 def Xform "sand_bedding" (
-                    kind = "group"
+                    kind = "component"
                 )
                 {
                     prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/house_site/Single_family_house>
@@ -425,7 +422,7 @@ def Scope "ifc_silly_sample_scene_project" (
             }
 
             def Xform "origin" (
-                kind = "group"
+                kind = "component"
                 prepend references = </Types/origin>
             )
             {
@@ -450,7 +447,7 @@ def Scope "ifc_silly_sample_scene_project" (
         }
 
         def Xform "geo_reference" (
-            kind = "group"
+            kind = "component"
             prepend references = </Types/geo_reference>
         )
         {
@@ -618,65 +615,84 @@ def Scope "Types" (
 
 def Scope "Materials" (
     doc = "IFC Materials"
+    kind = "group"
 )
 {
-    def Material "concrete_reinforced_in_situ"
+    def Material "concrete_reinforced_in_situ" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "53"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "concrete_reinforced_in-situ"
     }
 
-    def Material "wood_mdf_plate"
+    def Material "wood_mdf_plate" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "159"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "wood_mdf_plate"
     }
 
-    def Material "Default"
+    def Material "Default" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "174"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "Default"
     }
 
-    def Material "stone_sand_lime"
+    def Material "stone_sand_lime" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "238"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "stone_sand-lime"
     }
 
-    def Material "gypsum_fiber_board_panel"
+    def Material "gypsum_fiber_board_panel" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "314"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "gypsum_fiber-board_panel"
     }
 
-    def Material "composite_element_roof"
+    def Material "composite_element_roof" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "347"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "composite_element_roof"
     }
 
-    def Material "bulk_material_sand_coarse_generic"
+    def Material "bulk_material_sand_coarse_generic" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "403"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "bulk-material_sand-coarse_generic"
     }
 
-    def Material "virtual_white"
+    def Material "virtual_white" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "421"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "virtual_white"
     }
 
-    def Material "virtual_black"
+    def Material "virtual_black" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "440"
         custom token ifc:ifcClass = "IfcMaterial"

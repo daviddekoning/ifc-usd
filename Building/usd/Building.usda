@@ -2,7 +2,7 @@
 (
     metersPerUnit = 0.001
     subLayers = [
-        @colours.usda@,
+        @./colours.usda@,
         @./Building-Architecture.usda@,
         @./Building-Hvac.usda@,
         @./Building-Landscaping.usda@,

@@ -63,7 +63,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     uniform token[] xformOpOrder = ["xformOp:transform"]
 
                     def Xform "house_foundation" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_foundation>
                     )
                     {
@@ -86,7 +86,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "house_outer_wall_house_back" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_outer_wall_house_back>
                     )
                     {
@@ -113,7 +113,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "house_outer_wall_house_front" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_outer_wall_house_front>
                     )
                     {
@@ -140,7 +140,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "house_outer_wall_house_front_right" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_outer_wall_house_front_right>
                     )
                     {
@@ -167,7 +167,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "house_chimney" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_chimney>
                     )
                     {
@@ -190,7 +190,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "Group_21" (
-                        kind = "group"
+                        kind = "component"
                     )
                     {
                         prepend rel ifc:containedInSpatialStructure = </ifc_silly_sample_scene_project/environment_site/house_site/Single_family_house/_00_groundfloor>
@@ -203,7 +203,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "house_inner_wall" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_inner_wall>
                     )
                     {
@@ -231,7 +231,7 @@ def Scope "ifc_silly_sample_scene_project" (
                 }
 
                 def Xform "house_roof" (
-                    kind = "group"
+                    kind = "assembly"
                     prepend references = </Types/house_roof>
                 )
                 {
@@ -243,7 +243,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     uniform token[] xformOpOrder = ["xformOp:transform"]
 
                     def Xform "girder" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_girder>
                     )
                     {
@@ -269,7 +269,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "girder_1" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_girder>
                     )
                     {
@@ -295,7 +295,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "girder_2" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_girder>
                     )
                     {
@@ -321,7 +321,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "girder_3" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_girder>
                     )
                     {
@@ -347,7 +347,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "girder_4" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_girder>
                     )
                     {
@@ -373,7 +373,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "girder_5" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/house_girder>
                     )
                     {
@@ -399,7 +399,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "beam_shoe" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/beam_shoe>
                     )
                     {
@@ -422,7 +422,7 @@ def Scope "ifc_silly_sample_scene_project" (
                     }
 
                     def Xform "beam_shoe_1" (
-                        kind = "group"
+                        kind = "component"
                         prepend references = </Types/beam_shoe>
                     )
                     {
@@ -447,7 +447,7 @@ def Scope "ifc_silly_sample_scene_project" (
             }
 
             def Xform "origin" (
-                kind = "group"
+                kind = "component"
                 prepend references = </Types/origin>
             )
             {
@@ -472,7 +472,7 @@ def Scope "ifc_silly_sample_scene_project" (
         }
 
         def Xform "geo_reference" (
-            kind = "group"
+            kind = "component"
             prepend references = </Types/geo_reference>
         )
         {
@@ -604,51 +604,66 @@ def Scope "Types" (
 
 def Scope "Materials" (
     doc = "IFC Materials"
+    kind = "group"
 )
 {
-    def Material "concrete_reinforced_in_situ"
+    def Material "concrete_reinforced_in_situ" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "53"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "concrete_reinforced_in-situ"
     }
 
-    def Material "stone_sand_lime"
+    def Material "stone_sand_lime" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "72"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "stone_sand-lime"
     }
 
-    def Material "Default"
+    def Material "Default" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "146"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "Default"
     }
 
-    def Material "wood_spruce_beam"
+    def Material "wood_spruce_beam" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "186"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "wood_spruce_beam"
     }
 
-    def Material "metal_steel_galvanized"
+    def Material "metal_steel_galvanized" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "290"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "metal_steel-galvanized"
     }
 
-    def Material "virtual_white"
+    def Material "virtual_white" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "319"
         custom token ifc:ifcClass = "IfcMaterial"
         custom string ifc:name = "virtual_white"
     }
 
-    def Material "virtual_black"
+    def Material "virtual_black" (
+        kind = "component"
+    )
     {
         custom string ifc:globalId = "338"
         custom token ifc:ifcClass = "IfcMaterial"

@@ -473,6 +473,29 @@ import json
 import sys
 import argparse
 
+SPATIAL_GROUP_TYPES = {
+    "IfcProject",
+    "IfcSite",
+    "IfcBuilding",
+    "IfcBuildingStorey",
+    "IfcSpace",
+    "IfcSpatialZone",
+}
+
+
+def infer_model_kind(node: IfcNode) -> str:
+    """Infer USD model kind from IFC hierarchy role and child relationships."""
+    if node.ifc_type in SPATIAL_GROUP_TYPES:
+        return "group"
+
+    has_decomposition_children = any(
+        child.rel_type == "decomposition" for child in node.children
+    )
+    if has_decomposition_children:
+        return "assembly"
+
+    return "component"
+
 def convert_ifc_to_usd(ifc_file: str, output_usd_path: str = None):
     print(f"Loading IFC file: {ifc_file}")
     model = ifcopenshell.open(ifc_file)
@@ -583,12 +606,14 @@ def convert_ifc_to_usd(ifc_file: str, output_usd_path: str = None):
     object_to_materials = {}
     materials_scope = stage.DefinePrim("/Materials", "Scope")
     materials_scope.SetMetadata("documentation", "IFC Materials")
+    Usd.ModelAPI(materials_scope).SetKind("group")
     
     for mat_node in materials_node.children:
         mat_safe_name = sanitize_name(mat_node.name)
         mat_path = f"/Materials/{mat_safe_name}"
         # In USD, materials are usually created with type "Material"
         mat_prim = stage.DefinePrim(mat_path, "Material")
+        Usd.ModelAPI(mat_prim).SetKind("component")
         mat_prim.CreateAttribute("ifc:globalId", Sdf.ValueTypeNames.String).Set(mat_node.id)
         mat_prim.CreateAttribute("ifc:name", Sdf.ValueTypeNames.String).Set(mat_node.name)
         mat_prim.CreateAttribute("ifc:ifcClass", Sdf.ValueTypeNames.Token).Set(mat_node.ifc_type)
@@ -619,7 +644,7 @@ def convert_ifc_to_usd(ifc_file: str, output_usd_path: str = None):
 
             # IfcBuildingStorey, IfcSite, IfcBuilding, etc -> Xform
             prim = stage.DefinePrim(child_path, "Xform")
-            Usd.ModelAPI(prim).SetKind("group")
+            Usd.ModelAPI(prim).SetKind(infer_model_kind(child))
             prim.CreateAttribute("ifc:globalId", Sdf.ValueTypeNames.String).Set(child.id)
             prim.CreateAttribute("ifc:name", Sdf.ValueTypeNames.String).Set(child.name)
             prim.CreateAttribute("ifc:ifcClass", Sdf.ValueTypeNames.Token).Set(child.ifc_type)
@@ -627,13 +652,12 @@ def convert_ifc_to_usd(ifc_file: str, output_usd_path: str = None):
             if child.ifc_type in ("IfcSpace", "IfcSpatialZone"):
                 imageable = UsdGeom.Imageable(prim)
                 imageable.CreatePurposeAttr(UsdGeom.Tokens.guide)
-                imageable.CreateVisibilityAttr(UsdGeom.Tokens.invisible)
                 
             if child.ifc_type.lower() == "ifcbuildingelementproxy":
                 obj_type = str(child.attributes.get("ObjectType") or child.attributes.get("objectType") or "")
                 if obj_type.lower() == "origin":
                     imageable = UsdGeom.Imageable(prim)
-                    imageable.CreateVisibilityAttr(UsdGeom.Tokens.invisible)
+                    imageable.CreatePurposeAttr(UsdGeom.Tokens.guide)
 
             # Apply hierarchical transform based on global placement matrix
             child_matrix_list = child.global_matrix if child.global_matrix else parent_global_matrix_list
